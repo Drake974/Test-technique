@@ -24,6 +24,7 @@ if(!isset($_POST["user_management"]) && !isset($_POST["computer_management"]) &&
     echo("<h2 class=\"text-center mt-5\">Centre de gestion</h2>");
 }; 
 if(isset($_POST["user_management"])){
+    require_once('../models/showUser.php');
     require_once('../elements/modal/registerUser.php');
     require_once('../elements/modal/deleteUser.php');
     require_once('../elements/modal/editUser.php');

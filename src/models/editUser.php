@@ -22,7 +22,7 @@ if($error == null) {
     $data = [
         'nom_utilisateur' => $_POST['last_name'],
         'prenom_utilisateur' => $_POST['first_name'],
-        'numero_utilisateur' => $_POST['number']
+        'numero_utilisateur' => $_POST['number'],
     ];
     
     $customFilter = [
@@ -50,15 +50,18 @@ if($error == null) {
             $db->beginTransaction();
             
             //AJOUT TABLE UTILISATEURS
-            $query = 'INSERT INTO `utilisateurs`(`id_role`, `nom_utilisateur`, `prenom_utilisateur`, `numero_utilisateur`) 
-            VALUES (:id_role, :nom_utilisateur, :prenom_utilisateur, :numero_utilisateur)';
+            $query = 'UPDATE `utilisateurs` SET `nom_utilisateur` = :nom_utlisateur,
+             `prenom_utilisateur` = :prenom_utilisateur,
+              `numero_utilisateur`= :numero_utilisateur
+              WHERE `id_utilisateurs` = :id_utilisateurs';
             $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
             $sth->execute(array(
-                ':id_role' => 2,
+                ':id_utilisateurs' => $_POST['id_utilisateurs'],
                 ':nom_utilisateur' => $data_sanitized['nom_utilisateur'],
                 ':prenom_utilisateur' => $data_sanitized['prenom_utilisateur'],
                 ':numero_utilisateur' => $data_sanitized['numero_utilisateur']
             ));
+
             //$logger->info("Création d'un nouvel utilisateur -- TABLE UTILISATEUR OK");
             $db->commit();
 

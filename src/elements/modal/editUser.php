@@ -1,25 +1,28 @@
 <!-- Modal -->
-<div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModal" aria-hidden="true">
+<?php foreach($utilisateurs as $utilisateur):?>
+<div class="modal fade" id="<?= "editUserModal_" . htmlspecialchars($utilisateur->id_utilisateurs); ?>" tabindex="-1" aria-labelledby="editUserModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
+      
         <h5 class="modal-title" id="editUserModal">Modifier un  utilisateur</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="" method="POST">
+      <form action="../models/editUser.php" method="POST">
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="lastNameUserEdit" placeholder="Nom" required>
+            <input type="text" class="form-control" id="lastNameUserEdit" placeholder="Nom" required value="<?= htmlspecialchars($utilisateur->nom_utilisateur); ?>">
             <label for="lastNameUserEdit">Nom*</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="firstNameUserEdit" placeholder="Prénom" required>
+            <input type="text" class="form-control" id="firstNameUserEdit" placeholder="Prénom" required value="<?= htmlspecialchars($utilisateur->prenom_utilisateur); ?>">
             <label for="firstNameUserEdit">Prénom*</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="number" class="form-control" id="floatingUserEdit" placeholder="00000" required>
+            <input type="number" class="form-control" id="floatingUserEdit" placeholder="00000" required value="<?= htmlspecialchars($utilisateur->numero_utilisateur); ?>">
             <label for="floatingUserEdit">N° d'inscription*</label>
         </div>
+        <input type="hidden" value="htmlspecialchars($utilisateur->id_utilisateurs);" name="id_utilisateurs">
         <p>* Obligatoire</p>
         <div  class="text-center">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
@@ -33,3 +36,4 @@
     </div>
   </div>
 </div>
+<?php endforeach; ?> 
