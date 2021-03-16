@@ -1,0 +1,10 @@
+{
+    "name": "saminadin/reservation",
+    "description": "reservation ordinateur",
+    "require": {
+        "altorouter/altorouter": "^2.0"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.2"
+    }
+}
