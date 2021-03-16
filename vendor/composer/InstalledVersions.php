@@ -29,20 +29,11 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '076b06188e1a6bc793338a99bd9bdcfd2a5b9fcc',
-    'name' => 'saminadin/reservation',
+    'reference' => 'ded22cb02ef93f2c742f0992b5e7f76fad33c59b',
+    'name' => 'saminadin/test-technique',
   ),
   'versions' => 
   array (
-    'altorouter/altorouter' => 
-    array (
-      'pretty_version' => '2.0.1',
-      'version' => '2.0.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '127f6e96998708a31ef32252985bea82e3b03888',
-    ),
     'doctrine/inflector' => 
     array (
       'pretty_version' => '2.0.3',
@@ -158,14 +149,14 @@ private static $installed = array (
       ),
       'reference' => '408d5eafb83c57f6365a3ca330ff23aa4a5fa39b',
     ),
-    'saminadin/reservation' => 
+    'saminadin/test-technique' => 
     array (
       'pretty_version' => 'dev-main',
       'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => '076b06188e1a6bc793338a99bd9bdcfd2a5b9fcc',
+      'reference' => 'ded22cb02ef93f2c742f0992b5e7f76fad33c59b',
     ),
     'symfony/deprecation-contracts' => 
     array (
@@ -272,15 +263,6 @@ private static $installed = array (
       array (
         0 => '2.3',
       ),
-    ),
-    'symfony/var-dumper' => 
-    array (
-      'pretty_version' => 'v5.2.5',
-      'version' => '5.2.5.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '002ab5a36702adf0c9a11e6d8836623253e9045e',
     ),
     'voku/portable-ascii' => 
     array (

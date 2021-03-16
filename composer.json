@@ -1,8 +1,13 @@
 {
-    "name": "saminadin/reservation",
-    "description": "reservation ordinateur",
+    "name": "saminadin/test-technique",
+    "description": "reservation d'ordinateur",
+    "authors": [
+        {
+            "name": "Drake974",
+            "email": "70998537+Drake974@users.noreply.github.com"
+        }
+    ],
     "require": {
-        "altorouter/altorouter": "^2.0",
         "waavi/sanitizer": "~1.0"
     }
 }

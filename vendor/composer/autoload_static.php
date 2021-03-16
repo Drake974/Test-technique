@@ -4,18 +4,17 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitea237d8551f4ce779d4bb074a0d195a5
+class ComposerStaticInita5b5cb4a2e96e698e67db52df0c7904e
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
-        'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
+        'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
-        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -35,7 +34,6 @@ class ComposerStaticInitea237d8551f4ce779d4bb074a0d195a5
             'Symfony\\Polyfill\\Intl\\Normalizer\\' => 33,
             'Symfony\\Polyfill\\Intl\\Idn\\' => 26,
             'Symfony\\Contracts\\Translation\\' => 30,
-            'Symfony\\Component\\VarDumper\\' => 28,
             'Symfony\\Component\\Translation\\' => 30,
             'Symfony\\Component\\Mime\\' => 23,
             'Symfony\\Component\\HttpFoundation\\' => 33,
@@ -102,10 +100,6 @@ class ComposerStaticInitea237d8551f4ce779d4bb074a0d195a5
         'Symfony\\Contracts\\Translation\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/translation-contracts',
-        ),
-        'Symfony\\Component\\VarDumper\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
         'Symfony\\Component\\Translation\\' => 
         array (
@@ -174,7 +168,6 @@ class ComposerStaticInitea237d8551f4ce779d4bb074a0d195a5
     );
 
     public static $classMap = array (
-        'AltoRouter' => __DIR__ . '/..' . '/altorouter/altorouter/AltoRouter.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
@@ -186,9 +179,9 @@ class ComposerStaticInitea237d8551f4ce779d4bb074a0d195a5
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitea237d8551f4ce779d4bb074a0d195a5::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitea237d8551f4ce779d4bb074a0d195a5::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitea237d8551f4ce779d4bb074a0d195a5::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInita5b5cb4a2e96e698e67db52df0c7904e::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInita5b5cb4a2e96e698e67db52df0c7904e::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInita5b5cb4a2e96e698e67db52df0c7904e::$classMap;
 
         }, null, ClassLoader::class);
     }

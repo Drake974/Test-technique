@@ -1,4 +1,5 @@
 <?php require_once('../class/Connection.php');
+require_once('../controllers/session.php');
 use \Waavi\Sanitizer\Sanitizer;
 
 $error = null;
@@ -81,3 +82,4 @@ if($error == null) {
         header("Location: ../views/dashboard.php");
     }
 }
+?>
