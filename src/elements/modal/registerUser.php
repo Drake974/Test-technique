@@ -14,23 +14,23 @@ Enregistrer un utilisateur
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="" method="POST">
+      <form action="../models/createUser.php" method="POST">
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingLastName" placeholder="Nom" required>
+            <input type="text" class="form-control" id="floatingLastName" placeholder="Nom" required name="last_name">
             <label for="floatingLastName">Nom*</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingFirstName" placeholder="Prénom" required>
+            <input type="text" class="form-control" id="floatingFirstName" placeholder="Prénom" required name="first_name">
             <label for="floatingFirstName">Prénom*</label>
-        </div>
+        </div>     
         <div class="form-floating mb-3">
-            <input type="number" class="form-control" id="floatingRegister" placeholder="00000" required>
+            <input type="number" class="form-control" id="floatingRegister" placeholder="00000" required name="number">
             <label for="floatingRegister">N° d'inscription*</label>
         </div>
         <p>* Obligatoire</p>
         <div  class="text-center">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-        <button type="submit" class="btn btn-primary">Enregistrer</button>
+        <button type="submit" class="btn btn-primary" name="register_user">Enregistrer</button>
         </div>
         
      </form>
