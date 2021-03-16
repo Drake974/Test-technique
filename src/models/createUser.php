@@ -35,7 +35,7 @@ if($error == null) {
         
         'nom_utilisateur' => 'trim|escape|capitalize|htmlspecialchars',
         'prenom_utilisateur' => 'trim|escape|capitalize|htmlspecialchars',
-        'numero_particulier' => 'trim|escape|capitalize|htmlspecialchars'
+        'numero_utilisateur' => 'trim|escape|capitalize|htmlspecialchars'
     ];
     
     $sanitizer = new Sanitizer($data, $filters,  $customFilter);
