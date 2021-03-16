@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '15b0ea755696375d3d853a55c366b7f1982d2dff',
+    'reference' => '076b06188e1a6bc793338a99bd9bdcfd2a5b9fcc',
     'name' => 'saminadin/reservation',
   ),
   'versions' => 
@@ -165,7 +165,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '15b0ea755696375d3d853a55c366b7f1982d2dff',
+      'reference' => '076b06188e1a6bc793338a99bd9bdcfd2a5b9fcc',
     ),
     'symfony/deprecation-contracts' => 
     array (
