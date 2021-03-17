@@ -4,18 +4,7 @@
 <section class="row">
 <div class="col-md-2 col-sm-12 dashboard d-flex flex-column justify-content-center align-items-center">
 
-<form action="" method="post">
-<button type="submit" class="btn btn-info mt-4" name="user_management">Gestions des utilisateurs</button>
-</form>
-<form action="" method="post">
-<button type="submit" class="btn btn-info mt-4" name="computer_management">Gestion des ordinateurs</button>
-</form>
-<form action="" method="post">
-<button type="submit" class="btn btn-info mt-4" name="booking_management">Ajouter une réservation</button>
-</form>
-<form action="" method="post">
-<button type="submit" class="btn btn-info mt-4 mb-4" name="visual_management">Liste des réservations</button>
-</form>
+<?php require_once('../elements/sidebar.php'); ?>
 </div>
 <div class="col-md-10 col-sm-12">
 
@@ -38,6 +27,7 @@ if(isset($_POST["computer_management"])){
     require_once('../elements/computerManagement.php');
 };
 if(isset($_POST["booking_management"])){
+    require_once('../models/showComputer.php');
     require_once('../elements/modal/registerAdd.php');
     require_once('../elements/bookingManagement.php');
 } else if(isset($_POST["booking_choose"])) {

@@ -7,29 +7,36 @@ $error = null;
 $db = Connection::getPDO();
 if($db){
     try{   
-        //all annonce ok
+        //all postes ok
         $query = $db->query("SELECT * 
         FROM `postes`
         ");
         $computers = $query->fetchAll(PDO::FETCH_OBJ);
-        // $logger->info("Recuperation des données d'utilisateur' -- SUCCESS");
+        // $logger->info("Recuperation des données des postes -- SUCCESS");
+
+        //all postes disponible ok
+        $query = $db->query("SELECT * 
+        FROM `postes`
+        WHERE `statut_poste` = 'free'
+        ");
+        $freeComputers = $query->fetchAll(PDO::FETCH_OBJ);
+        // $logger->info("Recuperation des données des postes -- SUCCESS");
         
         // $logger->info("Recuperation des données -- FIN DES REQ");
         
     }catch(PDOException $e){
         $error = $e->getMessage();
-        // $logger->error("Echec de l'Affichage d'utilisateur -- $error");
+        // $logger->error("Echec de l'Affichage des postes -- $error");
         exit();
     
 
     }catch(PDOException $e){
         $error = $e->getMessage();
-        // $logger->error("Echec de l'Affichage des utilisateurs -- $error");
+        // $logger->error("Echec de l'Affichage des postes -- $error");
         exit();
     }
     
-    
 }else{
-   // $logger->alert("Echec lors l'Affichage des utilisateurs -- Impossible de se connecter à la base de données");
+   // $logger->alert("Echec lors l'Affichage des postes -- Impossible de se connecter à la base de données");
     exit();
 }

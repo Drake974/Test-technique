@@ -1,16 +1,16 @@
 <section>
 <h2 class="text-center">Gestion des réservations</h2>
 <div class="d-flex justify-content-center mb-4 mt-4">
-  <form action="" method="post" id="dateChoose" class="text-center">
+  <form action="" method="GET" id="dateChoose" class="text-center">
     <div class="form-floating mb-3">
       <input type="date" class="form-control form-date" id="floatingInput" placeholder="00/00/0000">
       <label for="floatingInput">Choisir votre date</label>
     </div>
     <select class="form-select form-date" aria-label="select">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <?php foreach($freeComputers as $freeComputer):?>
+                <option value=""><?= htmlspecialchars($freeComputer->numero_poste); ?></option>
+                <?php endforeach; ?>
+                
             </select>
     
     

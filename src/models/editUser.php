@@ -13,7 +13,7 @@ foreach($inputRequired as $value){
         $error = true;
         //$logger->info("Création d'un nouvel utilisateur -- VERIF SERVEUR NOK");
         $_SESSION['flash'] = array('Error', "Echec lors de la création de compte");
-        header("Location: ../views/dashboard.php");
+        header("Location: ../views/userDashboard.php");
         exit();
     }
 }
@@ -72,19 +72,19 @@ if($error == null) {
             //$_SESSION['isLoggedIn'] = true;
             //$_SESSION['role'] = "utilisateur";
             //$_SESSION['id_utilisateur'] = $id_utilisateur;
-            header("Location: ../views/dashboard.php");
+            header("Location: ../views/userDashboard.php");
         }catch(PDOException $e){
             $error = $e->getMessage();
             //$logger->error("Echec de la créationd d'un nouvel utilisateur (colocataire) -- $error");
             $db->rollBack();
             $_SESSION['flash'] = array('Error', "Echec lors de la création d'un utilisateur");
-            header("Location: ../views/dashboard.php");
+            header("Location: ../views/userDashboard.php");
         }
     }else{
         //$logger->alert("Echec lors de l\'inscription -- Impossible de se connecter à la base de données");
         // http_response_code(503);
         $_SESSION['flash'] = array('Error', "Echec lors de la création d'un utilisateur");
-        header("Location: ../views/dashboard.php");
+        header("Location: ../views/userDashboard.php");
     }
 }
 ?>
