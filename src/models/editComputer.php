@@ -12,7 +12,7 @@ foreach($inputRequired as $value){
         $error = true;
         //$logger->info("Création d'un nouvel utilisateur -- VERIF SERVEUR NOK");
         $_SESSION['flash'] = array('Error', "Echec lors de la création de compte");
-         header("Location: ../views/dashboard.php");
+        header("Location: ../views/dashboard.php");
         exit();
     }
 }
@@ -47,7 +47,8 @@ if($error == null) {
               WHERE `id_postes` = :id_postes';
             $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
             $sth->execute(array(
-                ':id_postes' => $id_postes    
+                ':id_postes' => $id_postes,
+                ':numero_poste' => $data_sanitized['numero_poste']
             ));
 
             //$logger->info("Création d'un nouvel utilisateur -- TABLE UTILISATEUR OK");
@@ -59,7 +60,7 @@ if($error == null) {
             //$_SESSION['isLoggedIn'] = true;
             //$_SESSION['role'] = "utilisateur";
             //$_SESSION['id_utilisateur'] = $id_utilisateur;
-             header("Location: ../views/dashboard.php");
+            header("Location: ../views/dashboard.php");
            
         }catch(PDOException $e){
             $error = $e->getMessage();
