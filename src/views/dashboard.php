@@ -31,6 +31,7 @@ if(isset($_POST["user_management"])){
     require_once('../elements/userManagement.php');
 };
 if(isset($_POST["computer_management"])){
+    require_once('../models/showComputer.php');
     require_once('../elements/modal/registerComputer.php');
     require_once('../elements/modal/editComputer.php');
     require_once('../elements/modal/deleteComputer.php');

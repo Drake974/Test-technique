@@ -1,4 +1,5 @@
 <!-- Modal -->
+<?php foreach($computers as $computer):?>
 <div class="modal fade" id="deleteComputerModal" tabindex="-1" aria-labelledby="deleteComputerModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -26,3 +27,4 @@
     </div>
   </div>
 </div>
+<?php endforeach; ?>
