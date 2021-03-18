@@ -7,22 +7,22 @@ $error = null;
 
 
 //Validation des données cote serveur + securite specialchars
-$inputRequired = ['register_number_computer'];
+$inputRequired = ['date_poste', 'id_poste', 'time_date'];
 foreach($inputRequired as $value){
     if($_POST["$value"] == ""){
         $error = true;
-        //$logger->info("Création d'un nouvel utilisateur -- VERIF SERVEUR NOK");
-        $_SESSION['flash'] = array('Error', "Echec lors de la création de compte");
-        header("Location: ../views/computerDashboard.php");
+        $_SESSION['flash'] = array('Error', "Echec lors de l'attribution d'un ordinateur");
+        header("Location: ../views/bookingDashboard.php");
         exit();
     }
 }
-//$logger->info("Création d'un nouvel utilisateur -- VERIF SERVEUR OK");
 if($error == null) {
     //On déclare les valeurs à sanitizer
     $data = [
-        'numero_poste' => $_POST['register_number_computer']
-        
+        'id_utilisateurs' => $_POST['booking_user_id'],
+        'id_postes' => $_POST['id_poste'],
+        'date' => $_POST['date_poste'],
+        'horaire' => $_POST['time_date'] 
     ];
     
     $customFilter = [
@@ -33,51 +33,50 @@ if($error == null) {
 
     $filters = [
         
-        'numero_poste' => 'trim|escape|capitalize|htmlspecialchars'
+        'id_utilisateurs' => 'trim|escape|capitalize|htmlspecialchars',
+        'id_postes' => 'trim|escape|capitalize|htmlspecialchars',
+        'date' => 'trim|format_date:Y-m-d, Y-m-d|htmlspecialchars',
+        'horaire' => 'trim|escape|capitalize|htmlspecialchars'
     ];
     
     $sanitizer = new Sanitizer($data, $filters,  $customFilter);
+    
     $data_sanitized = $sanitizer->sanitize();
-    // $logger->info("Création d'un nouvel utilisateur -- SANITIZE OK");
     //Connexion à la BDD
     $db = Connection::getPDO();
     if($db){
-        //$id_utilisateur = md5(uniqid(rand(), true));
-        //$id = md5(uniqid(rand(), true));
-        $statut= "free";
+
         try{
             $db->beginTransaction();
             
             //AJOUT TABLE UTILISATEURS
-            $query = 'INSERT INTO `postes`(`numero_poste`, `statut_poste`) 
-            VALUES (:numero_poste, :statut_poste)';
+            $query = 'INSERT INTO `creneaux`(`id_postes`, `id_utilisateurs`,`date`, `horaire`) 
+            VALUES (:id_postes, :id_utilisateurs, :date_register, :horaire)';
             $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
             $sth->execute(array(
-                ':numero_poste' => $data_sanitized['numero_poste'],
-                ':statut_poste' => $statut
+                ':id_postes' => $data_sanitized['id_postes'],
+                ':id_utilisateurs' => $data_sanitized['id_utilisateurs'],
+                ':date_register' => $data_sanitized['date'],
+                ':horaire' => $data_sanitized['horaire']
             ));
-            //$logger->info("Création d'un nouvel utilisateur -- TABLE UTILISATEUR OK");
             $db->commit();
 
-            //$logger->info("Création d'un nouvel utilisateur -- Role colocataire");
             // On complete les valeurs pour session
             //$_SESSION['flash'] = array('Success', "Utilisateur créé avec succès");
             //$_SESSION['isLoggedIn'] = true;
             //$_SESSION['role'] = "utilisateur";
             //$_SESSION['id_utilisateur'] = $id_utilisateur;
-            header("Location: ../views/computerDashboard.php");
+           header("Location: ../views/bookingDashboard.php");
         }catch(PDOException $e){
             $error = $e->getMessage();
-            //$logger->error("Echec de la créationd d'un nouvel utilisateur (colocataire) -- $error");
             $db->rollBack();
-            $_SESSION['flash'] = array('Error', "Echec lors de la création d'un utilisateur");
-            header("Location: ../views/computerDashboard.php");
+            $_SESSION['flash'] = array('Error', "Echec lors de l'attribution d'un ordinateur");
+            header("Location: ../views/bookingDashboard.php");
         }
     }else{
-        //$logger->alert("Echec lors de l\'inscription -- Impossible de se connecter à la base de données");
         // http_response_code(503);
-        $_SESSION['flash'] = array('Error', "Echec lors de la création d'un utilisateur");
-        header("Location: ../views/computerDashboard.php");
+        $_SESSION['flash'] = array('Error', "Echec lors de l'attribution d'un ordinateur");
+        header("Location: ../views/bookingDashboard.php");
     }
 }
 ?>
