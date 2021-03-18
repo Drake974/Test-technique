@@ -21,6 +21,14 @@ if($db){
         ");
         $freeComputers = $query->fetchAll(PDO::FETCH_OBJ);
         // $logger->info("Recuperation des données des postes -- SUCCESS");
+
+        // all horaire ok
+        $query = $db->query("SELECT * 
+        FROM `creneaux`
+        
+        ");
+        $timeTables = $query->fetchAll(PDO::FETCH_OBJ);
+        // $logger->info("Recuperation des données des postes -- SUCCESS");
         
         // $logger->info("Recuperation des données -- FIN DES REQ");
         

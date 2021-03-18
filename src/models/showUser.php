@@ -10,7 +10,7 @@ if($db){
         //all annonce ok
         $query = $db->query("SELECT * 
         FROM `utilisateurs` 
-        WHERE `id_role`= 2;
+        WHERE `roles`= 2;
         ");
         $utilisateurs = $query->fetchAll(PDO::FETCH_OBJ);
         // $logger->info("Recuperation des données d'utilisateur' -- SUCCESS");
