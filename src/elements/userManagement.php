@@ -30,8 +30,9 @@
 </svg>
 </button>
 </td>
-<?php endforeach; ?>  
+ 
     </tr>
+    <?php endforeach; ?> 
   </tbody>
 </table>
 </section>

@@ -17,7 +17,7 @@ if($db){
         //all postes disponible ok
         $query = $db->query("SELECT * 
         FROM `postes`
-        WHERE `statut_poste` = 'free'
+        
         ");
         $freeComputers = $query->fetchAll(PDO::FETCH_OBJ);
         // $logger->info("Recuperation des données des postes -- SUCCESS");
@@ -36,12 +36,7 @@ if($db){
         $error = $e->getMessage();
         // $logger->error("Echec de l'Affichage des postes -- $error");
         exit();
-    
 
-    }catch(PDOException $e){
-        $error = $e->getMessage();
-        // $logger->error("Echec de l'Affichage des postes -- $error");
-        exit();
     }
     
 }else{

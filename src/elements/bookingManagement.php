@@ -1,22 +1,46 @@
 <section>
 <h2 class="text-center">Gestion des réservations</h2>
-<div>
-<form class="d-flex" action="../models/showUser.php" method="POST">
-  <input class="form-control me-2 form-date" type="search" placeholder="Identifiant" aria-label="Search" name="search_user">
-  <button class="btn btn-outline-success" type="submit" >Afficher</button>
-</form>
-</div>
-
 
 <div class="d-flex  mb-4 mt-4">
-
+<form action="" method="POST">
+<div class="form-floating mb-3">
+            <input type="number" class="form-control" id="floatingComputer" placeholder="0000" required name="user_show">
+            <label for="floatingComputer">Numéro*</label>
+        </div>
+        <button type="submit" class="btn btn-primary" name="show_user">Afficher</button>
+        </div>
+</form>
 <div>
-  <form action="" method="GET" id="dateChoose" class="d-flex">
 
-  <p>Nom:</p>
-<p>Prénom:</p>
-<p>N°:</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" class="text-center">Nom</th>
+      <th scope="col" class="text-center">Prénom</th>
+      <th scope="col" class="text-center">N° d'inscription</th>
+      
+      
+    </tr>
+  </thead>
+  <tbody>
+  <?php if(isset($_POST["show_user"])):?>
+    <?php foreach($resultats as $resultat):?>
+    <tr>
+      <td scope="row" class="text-center"><?= htmlspecialchars($resultat->nom_utilisateur); ?></td>
+      <td class="text-center"><?= htmlspecialchars($resultat->prenom_utilisateur); ?></td>
+      <td class="text-center"><?= htmlspecialchars($resultat->numero_utilisateur); ?></td>
 
+    </tr>
+    <?php endforeach; ?>
+    <?php endif;?>
+  </tbody>
+</table>
+<form action="" method="POST">
+  <input type="hidden" name="booking_user_id" value="<?php 
+  if(isset($_POST["show_user"])){
+    foreach($resultats as $resultat){
+    echo(htmlspecialchars($resultat->id_utilisateur));
+    }};?>"> 
     <div class="form-floating mb-3">
       <input type="date" class="form-control form-date" id="floatingInput" placeholder="00/00/0000" name="date_poste" required>
       <label for="floatingInput">Choisir votre date</label>
@@ -30,7 +54,7 @@
             
             
     
-    <button type="submit" class="btn btn-primary" name="booking_choose">reserver</button>
+    <button type="submit" class="btn btn-primary" name="booking_choose">Reserver</button>
     
   </form>
   </div>
