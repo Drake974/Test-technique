@@ -50,7 +50,7 @@ if($error == null) {
             $db->beginTransaction();
             
             //AJOUT TABLE UTILISATEURS
-            $query = 'INSERT INTO `creneaux`(`id_postes`, `id_utilisateurs`,`date`, `horaire`) 
+            $query = 'INSERT INTO `creneaux`(`id_poste`, `id_utilisateur`,`date`, `horaire`) 
             VALUES (:id_postes, :id_utilisateurs, :date_register, :horaire)';
             $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
             $sth->execute(array(
