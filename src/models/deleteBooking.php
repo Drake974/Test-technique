@@ -16,14 +16,14 @@ if($db){
         ));
         
         // On complete les valeurs pour session
-        $_SESSION['flash'] = array('Success', "Utilisateur supprimé avec succès");
+        $_SESSION['flash'] = array('Success', "Réservation supprimé avec succès");
         header("Location: ../views/bookingDashboard.php");
     }catch(PDOException $e){
         $error = $e->getMessage();
-        $_SESSION['flash'] = array('Error', "Echec lors de la suppression de l'utilisateur");
+        $_SESSION['flash'] = array('Error', "Echec lors de la suppression de la réservation");
         header("Location: ../views/bookingDashboard.php");
     }
 }else{
-    $_SESSION['flash'] = array('Error', "Echec lors de la suppression de l'utilisateur");
+    $_SESSION['flash'] = array('Error', "Echec lors de la suppression de la réservation");
     header("Location: ../views/bookingDashboard.php");
 };

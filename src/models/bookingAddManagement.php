@@ -11,7 +11,7 @@ $inputRequired = ['date_poste', 'id_poste', 'time_date'];
 foreach($inputRequired as $value){
     if($_POST["$value"] == ""){
         $error = true;
-        $_SESSION['flash'] = array('Error', "Echec lors de l'attribution d'un ordinateur");
+        $_SESSION['flash'] = array('Error', "Echec lors de l'attribution d'un poste");
         header("Location: ../views/bookingDashboard.php");
         exit();
     }
@@ -61,21 +61,19 @@ if($error == null) {
             ));
             $db->commit();
 
-            // On complete les valeurs pour session
-            //$_SESSION['flash'] = array('Success', "Utilisateur créé avec succès");
-            //$_SESSION['isLoggedIn'] = true;
-            //$_SESSION['role'] = "utilisateur";
-            //$_SESSION['id_utilisateur'] = $id_utilisateur;
+            
+            $_SESSION['flash'] = array('Success', "Reservation créé avec succès");
+            
            header("Location: ../views/bookingDashboard.php");
         }catch(PDOException $e){
             $error = $e->getMessage();
             $db->rollBack();
-            $_SESSION['flash'] = array('Error', "Echec lors de l'attribution d'un ordinateur");
+            $_SESSION['flash'] = array('Error', "Echec lors de l'attribution d'un poste");
             header("Location: ../views/bookingDashboard.php");
         }
     }else{
         // http_response_code(503);
-        $_SESSION['flash'] = array('Error', "Echec lors de l'attribution d'un ordinateur");
+        $_SESSION['flash'] = array('Error', "Echec lors de l'attribution d'un poste");
         header("Location: ../views/bookingDashboard.php");
     }
 }

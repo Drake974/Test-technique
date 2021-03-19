@@ -55,7 +55,7 @@ if($error == null) {
             //COMPARAISON DU PASSWORD AVEC LA TABLE UTILISATEURS
             if (!$resultat){
                 // echo 'Mauvais identifiant ou mot de passe!';
-                $_SESSION['flash'] = array('Error',"Echec lors de la connexion au compte", "Mauvais identifiant ou mot de passe!!");
+                $_SESSION['flash'] = array('Error',"Echec lors de la connexion au compte", "Mauvais identifiant ou mot de passe!");
                 header("Location: ../views/login.php");
             } else {
                 $passwordCorrect = password_verify($data_sanitized['password'],htmlspecialchars($resultat[0]->password_utilisateur));
@@ -65,7 +65,7 @@ if($error == null) {
                     header("Location: ../views/home.php");
                 }else{
                     echo 'Mauvais identifiant ou mot de passe !';
-                    $_SESSION['flash'] = array('Error',"Echec lors de la connexion au compte", "Mauvais identifiant ou mot de passe!!!");
+                    $_SESSION['flash'] = array('Error',"Echec lors de la connexion au compte", "Mauvais identifiant ou mot de passe!");
                     
                     header("Location: ../views/login.php");
                 }

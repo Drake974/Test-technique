@@ -11,7 +11,7 @@ foreach($inputRequired as $value){
     if($_POST["$value"] == ""){
         $error = true;
         
-        $_SESSION['flash'] = array('Error', "Echec lors de la création de compte");
+        $_SESSION['flash'] = array('Error', "Echec lors de la création d'un utilisateur'");
         header("Location: ../views/userDashboard.php");
         exit();
     }

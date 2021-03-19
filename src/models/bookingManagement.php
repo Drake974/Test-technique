@@ -19,8 +19,7 @@ if($db){
              ':numero_utilisateur' => $numberUser
          ));
          $resultats = $sth->fetchAll(PDO::FETCH_OBJ); //stock dans une variable les données de la bdd 
-        //var_dump($resultats);
-        //  header("Location: ../views/bookingDashboard.php");
+        
 
    
     }catch(PDOException $e){
