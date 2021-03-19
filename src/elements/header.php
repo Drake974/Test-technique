@@ -13,6 +13,33 @@
 <body>
     
 <header>
+    <!-- sessionflash -->
+    <?php if(isset($_SESSION['flash'])):?>
+    <?php if($_SESSION['flash'][0] == "Success"):?>
+    <div class="position-fixed bottom-0 start-50 translate-middle-x" style="z-index: 10002">
+    <div class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" id="liveToast" aria-atomic="true">
+        <div class="d-flex">
+        <div class="toast-body">
+        <?= $_SESSION['flash'][1] ?>
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+    </div>
+    <?php else:?>
+    <div class="position-fixed bottom-0 start-50 translate-middle-x" style="z-index: 10002">
+    <div class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" id="liveToast" aria-atomic="true">
+        <div class="d-flex">
+        <div class="toast-body">
+            <?= $_SESSION['flash'][1] ?>
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+    </div>
+    <?php endif;?>
+    <?php endif;?>
+    <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-4">
         <div class="container-fluid">
             <a class="navbar-brand fw-bold border p-2 rounded" href="../views/home.php">CENTRE CULTUREL</a>
