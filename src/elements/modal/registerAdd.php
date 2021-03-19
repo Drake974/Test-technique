@@ -19,7 +19,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-        <button type="submit" class="btn btn-primary" name="add_booking">Enregistrer</button>
+        <button type="submit" class="btn btn-warning" name="add_booking">Enregistrer</button>
       </div>
       </form>
     </div>

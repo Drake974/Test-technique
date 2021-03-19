@@ -51,6 +51,9 @@ if($error == null) {
         //$id_utilisateur = md5(uniqid(rand(), true));
         //$id = md5(uniqid(rand(), true));
         try{
+            
+
+
             $db->beginTransaction();
             
             //AJOUT TABLE UTILISATEURS

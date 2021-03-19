@@ -1,4 +1,5 @@
 <?php
+require_once('../controllers/session.php');
 require_once('../class/Connection.php');
 
 $error = null;

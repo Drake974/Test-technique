@@ -20,7 +20,7 @@
 
         <div  class="text-center">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-        <button type="submit" class="btn btn-primary" name="delete_booking" >Supprimer</button>
+        <button type="submit" class="btn btn-warning" name="delete_booking" >Supprimer</button>
         </div>
         
      </form>

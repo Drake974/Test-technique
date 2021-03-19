@@ -1,4 +1,7 @@
 <footer>
+    <div class="d-flex justify-content-center bg-dark fixed-bottom">
+        <span class="text-white">Copyright Centre culturel</span>
+    </div>
 </footer>
 
 <!-- script bootstrap -->

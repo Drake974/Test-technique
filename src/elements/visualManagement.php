@@ -1,4 +1,4 @@
-<h2 class="text-center">Gestion des réservations</h2>
+<h2 class="text-center mt-4">Gestion des réservations</h2>
 <div class="d-flex justify-content-center mb-4 mt-4">
 <form action="" method="post" id="dateChoose" class="text-center">
 <div class="form-floating mb-3">

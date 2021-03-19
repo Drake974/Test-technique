@@ -1,7 +1,7 @@
 <h2 class="text-center">Gestion des utilisateurs</h2>
 <!-- Button trigger modal -->
 <div class="d-flex justify-content-center">
-<button type="button" class="btn btn-primary mt-5 mb-5" data-bs-toggle="modal" data-bs-target="#userModal">
+<button type="button" class="btn btn-warning mt-5 mb-5 form-date" data-bs-toggle="modal" data-bs-target="#userModal">
 Enregistrer un utilisateur
 </button>
 </div>
@@ -30,7 +30,7 @@ Enregistrer un utilisateur
         <p>* Obligatoire</p>
         <div  class="text-center">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-        <button type="submit" class="btn btn-primary" name="register_user">Enregistrer</button>
+        <button type="submit" class="btn btn-warning" name="register_user">Enregistrer</button>
         </div>
         
      </form>

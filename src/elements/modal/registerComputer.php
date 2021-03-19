@@ -1,7 +1,7 @@
 <h2 class="text-center">Gestion des ordinateurs</h2>
 <!-- Button trigger modal -->
 <div class="d-flex justify-content-center">
-<button type="button" class="btn btn-primary mt-5 mb-5" data-bs-toggle="modal" data-bs-target="#computerModal">
+<button type="button" class="btn btn-warning mt-5 mb-5 form-date" data-bs-toggle="modal" data-bs-target="#computerModal">
 Ajouter un ordinateur
 </button>
 </div>
@@ -23,7 +23,7 @@ Ajouter un ordinateur
         <p>* Obligatoire</p>
         <div  class="text-center">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-        <button type="submit" class="btn btn-primary" name="register_computer">Ajouter</button>
+        <button type="submit" class="btn btn-warning" name="register_computer">Ajouter</button>
         </div>
         
      </form>

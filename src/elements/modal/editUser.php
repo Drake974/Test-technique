@@ -26,7 +26,7 @@
         <p>* Obligatoire</p>
         <div  class="text-center">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-        <button type="submit" class="btn btn-primary" name="edit_user">Modifier</button>
+        <button type="submit" class="btn btn-warning" name="edit_user">Modifier</button>
         </div>
         
      </form>

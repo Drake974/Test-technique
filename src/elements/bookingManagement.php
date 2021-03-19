@@ -105,7 +105,7 @@
     <?php endforeach; ?>
   </select>
   <!-- bouton pour reserver -->
-  <button type="submit" class="btn btn-primary form-bouton" name="booking_show_register ">Afficher</button>
+  <button type="submit" class="btn btn-primary form-bouton" name="booking_show_register">Afficher</button>
     
 </form>
 </div>

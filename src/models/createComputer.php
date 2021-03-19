@@ -46,6 +46,19 @@ if($error == null) {
         //$id = md5(uniqid(rand(), true));
         $statut= "free";
         try{
+            $number = htmlspecialchars($_POST["register_number_computer"], ENT_QUOTES);   
+
+         $query = 'SELECT * FROM `postes` WHERE `numero_poste`=:numero_poste';
+         $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+         $sth->execute(array(
+             ':numero_poste' => $number
+         ));
+         $Allcomputer = $sth->fetchAll(PDO::FETCH_OBJ);
+         if($Allcomputer){
+            $_SESSION['flash'] = array('Error',"Echec lors de l'enregistrement", "Choisir un autre numéro!");
+            header("Location: ../views/userDashboard.php");
+
+         }else{
             $db->beginTransaction();
             
             //AJOUT TABLE UTILISATEURS
@@ -66,6 +79,7 @@ if($error == null) {
             //$_SESSION['role'] = "utilisateur";
             //$_SESSION['id_utilisateur'] = $id_utilisateur;
             header("Location: ../views/computerDashboard.php");
+        }
         }catch(PDOException $e){
             $error = $e->getMessage();
             //$logger->error("Echec de la créationd d'un nouvel utilisateur (colocataire) -- $error");

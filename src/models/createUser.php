@@ -47,8 +47,21 @@ if($error == null) {
         //$id_utilisateur = md5(uniqid(rand(), true));
         //$id = md5(uniqid(rand(), true));
         try{
+            $identity = htmlspecialchars($_POST["number"], ENT_QUOTES);   
+
+         $query = 'SELECT * FROM `utilisateurs` WHERE `numero_utilisateur`=:numero_utilisateur';
+         $sth = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+         $sth->execute(array(
+             ':numero_utilisateur' => $identity
+         ));
+         $result = $sth->fetchAll(PDO::FETCH_OBJ);
+         if($result){
+            $_SESSION['flash'] = array('Error',"Echec lors de l'enregistrement", "Choisir un autre identifiant!");
+            header("Location: ../views/userDashboard.php");
+
+         }else{
+
             $db->beginTransaction();
-            
             //AJOUT TABLE UTILISATEURS
             $query = 'INSERT INTO `utilisateurs`(`roles`, `nom_utilisateur`, `prenom_utilisateur`, `numero_utilisateur`) 
             VALUES (:roles, :nom_utilisateur, :prenom_utilisateur, :numero_utilisateur)';
@@ -69,6 +82,7 @@ if($error == null) {
             //$_SESSION['role'] = "utilisateur";
             //$_SESSION['id_utilisateur'] = $id_utilisateur;
             header("Location: ../views/userDashboard.php");
+        }
         }catch(PDOException $e){
             $error = $e->getMessage();
             //$logger->error("Echec de la créationd d'un nouvel utilisateur (colocataire) -- $error");

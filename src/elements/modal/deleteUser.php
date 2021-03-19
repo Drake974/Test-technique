@@ -15,7 +15,7 @@
       <input type="hidden" value="<?= htmlspecialchars($utilisateur->id_utilisateurs);?>" name="id_utilisateurs_delete">
         <div  class="text-center">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-        <button type="submit" class="btn btn-primary" name="delete_user">Supprimer</button>
+        <button type="submit" class="btn btn-warning" name="delete_user">Supprimer</button>
         </div>
      </form>
         
