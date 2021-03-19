@@ -5,7 +5,7 @@
     <tr>
       <th scope="col" class="text-center">Nom</th>
       <th scope="col" class="text-center">Prénom</th>
-      <th scope="col" class="text-center">N° d'inscription</th>
+      <th scope="col" class="text-center">Numéro d'inscription</th>
       <th scope="col" class="text-center">Gestion</th>
       
     </tr>

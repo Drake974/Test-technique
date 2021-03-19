@@ -1,6 +1,6 @@
 <?php require_once('../elements/header.php');?>
 
-<h1 class="text-center">page d'accueil</h1>
+<h1 class="text-center">CENTRE CULTUREL</h1>
 <section class="container">
 
 <div class="d-flex justify-content-center mb-4 mt-4">

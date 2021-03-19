@@ -56,7 +56,7 @@ if($error == null) {
          $Allcomputer = $sth->fetchAll(PDO::FETCH_OBJ);
          if($Allcomputer){
             $_SESSION['flash'] = array('Error',"Echec lors de l'enregistrement", "Choisir un autre numéro!");
-            header("Location: ../views/userDashboard.php");
+            header("Location: ../views/computerDashboard.php");
 
          }else{
             $db->beginTransaction();

@@ -26,5 +26,10 @@ body{
     width: 250px;
 }
 .form-tables{
-    height: 100px;
+    min-height: 100px;
+}
+h1, h2{
+    background-color: beige;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }

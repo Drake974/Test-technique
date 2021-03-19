@@ -1,9 +1,9 @@
 
-<h2 class="text-center mt-4">Gestion des réservations</h2>
+<h2 class="text-center mb-5">Gestion des réservations</h2>
 
 <!-- recherche par l'identifiant -->
-<div class="d-flex justify-content-center">
-<form action="" method="POST">
+<div class="d-flex justify-content-around mb-4">
+<form action="" method="POST" class="bg-light p-2 rounded">
   <div class="mb-4 mt-4">
     <div class="form-floating mb-3">
       <input type="number" class="form-control form-date" id="floatingIdentity" placeholder="0000" required name="user_show">
@@ -11,41 +11,12 @@
     </div>
     <p class="mb-1">*Obligatoire</p>
     <div class="d-flex justify-content-center">
-      <button type="submit" class="btn btn-primary form-bouton" name="show_user">Afficher</button>
+      <button type="submit" class="btn btn-warning form-bouton" name="show_user">Afficher</button>
       </div>
   </div>
 </form>
-</div>
-  
-<?php if(isset($_POST["show_user"]) and !$resultats){
-  echo('<p>Cette identifiant n\'est pas enregistré</p>');
-};?>
-<div>
-<!-- tableau d'affichage à partir de l'identifiant -->
-<div  class="form-tables">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col" class="text-center">Nom</th>
-        <th scope="col" class="text-center">Prénom</th>
-        <th scope="col" class="text-center">N° d'inscription</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php if(isset($_POST["show_user"])):?>
-        <?php foreach($resultats as $resultat):?>
-          <tr>
-            <td scope="row" class="text-center"><?= htmlspecialchars($resultat->nom_utilisateur); ?></td>
-            <td class="text-center"><?= htmlspecialchars($resultat->prenom_utilisateur); ?></td>
-            <td class="text-center"><?= htmlspecialchars($resultat->numero_utilisateur); ?></td>
-          </tr>
-        <?php endforeach; ?>
-      <?php endif;?>
-    </tbody>
-  </table>
-</div>
-<div class="d-flex justify-content-center">
-<form action="../models/bookingAddManagement.php" method="POST">
+
+<form action="../models/bookingAddManagement.php" method="POST" class="bg-light p-2 rounded">
   <input type="hidden" name="booking_user_id" value="<?php 
     if(isset($_POST["show_user"])){
     foreach($resultats as $resultat){
@@ -74,15 +45,45 @@
     <?php endforeach; ?>
   </select>
   <!-- bouton pour reserver -->
-  <button type="submit" class="btn btn-primary form-bouton" name="booking_choose">Reserver</button>
+  <button type="submit" class="btn btn-warning form-bouton" name="booking_choose">Reserver</button>
     
 </form>
 </div>
+
+
+<?php if(isset($_POST["show_user"]) and !$resultats){
+  echo('<p class=text-center>Cette identifiant n\'est pas enregistré</p>');
+};?>
+<div>
+<!-- tableau d'affichage à partir de l'identifiant -->
+<div  class="form-tables">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col" class="text-center">Nom</th>
+        <th scope="col" class="text-center">Prénom</th>
+        <th scope="col" class="text-center">Numéro d'inscription</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php if(isset($_POST["show_user"])):?>
+        <?php foreach($resultats as $resultat):?>
+          <tr>
+            <td scope="row" class="text-center"><?= htmlspecialchars($resultat->nom_utilisateur); ?></td>
+            <td class="text-center"><?= htmlspecialchars($resultat->prenom_utilisateur); ?></td>
+            <td class="text-center"><?= htmlspecialchars($resultat->numero_utilisateur); ?></td>
+          </tr>
+        <?php endforeach; ?>
+      <?php endif;?>
+    </tbody>
+  </table>
+</div>
+
 </div>
 <!-- ////////////////////////////////////////////////////////////// -->
-<h2 class="text-center mt-4 mb-4">Liste des réservations</h2>
-<div class="d-flex justify-content-center">
-<form action="" method="POST">
+<h2 class="text-center mt-5 mb-5">Liste des réservations</h2>
+<div class="d-flex justify-content-around mb-4">
+<form action="" method="POST" class="bg-light p-2 rounded">
 <div class="form-floating mb-3">
     <input type="date" class="form-control form-date" id="floatingDateUser" placeholder="00/00/0000" name="date_show" required>
     <label for="floatingDateUSer">Choisir la date</label>
@@ -105,12 +106,26 @@
     <?php endforeach; ?>
   </select>
   <!-- bouton pour reserver -->
-  <button type="submit" class="btn btn-primary form-bouton" name="booking_show_register">Afficher</button>
+  <button type="submit" class="btn btn-warning form-bouton" name="booking_show_register">Afficher</button>
     
 </form>
+<form action="" method="POST" class="ms-5 bg-light p-2 rounded">
+  <div class="mb-4 mt-4">
+    <div class="form-floating mb-3">
+      <input type="number" class="form-control form-date" id="floatingIdentity" placeholder="0000" required name="select_identity_user">
+      <label for="floatingIdentity">Identifiant*</label>
+    </div>
+    <p class="mb-1">*Obligatoire</p>
+    
+      <button type="submit" class="btn btn-warning form-bouton" name="select_identity">Afficher</button>
+      
+  </div>
+</form>
 </div>
+
+<div class="form-tables mb-5">
 <!-- tableau de gestion -->
-<table class="table">
+<table class="table table-striped">
   <thead>
     <tr>
     <th scope="col" class="text-center">Date</th>
@@ -124,7 +139,7 @@
   </thead>
   <tbody>
   <?php ?>
-  <?php if(isset($_POST["booking_show_register"])):?>
+  <?php if(isset($_POST["booking_show_register"]) or isset($_POST["select_identity"])):?>
     <?php foreach($users as $user):?>
     <tr>
       <td scope="row" class="text-center"><?= (new DateTime(htmlspecialchars($user->date).'00:00:00'))->format('d/m/Y')?>
@@ -134,7 +149,7 @@
       <td class="text-center"><?= htmlspecialchars($user->prenom_utilisateur); ?></td>
       <td class="text-center"><?= htmlspecialchars($user->numero_utilisateur); ?></td>
       <td class="text-center">
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#<?= "deleteBookingrModal_". htmlspecialchars($user->id_creneaux);?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#<?= "deleteBookingrModal_". htmlspecialchars($user->id_creneaux);?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
   <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
 </svg>
 </button>
@@ -146,6 +161,7 @@
     <?php ?> 
   </tbody>
 </table>
+</div>
 
 
 
