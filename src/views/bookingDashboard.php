@@ -1,4 +1,4 @@
-<?php require_once('../elements/header.php');?>
+<?php require_once(dirname(__DIR__).'/elements/header.php');?>
 
 
 <section class="row">
@@ -6,12 +6,12 @@
 <div class="col">
 
 <?php
-require_once('../models/bookingShowManagement.php');
-require_once('../models/bookingManagement.php');
-require_once('../models/showComputer.php');
-require_once('../elements/modal/registerAdd.php');
-require_once('../elements/modal/deleteBooking.php');
-require_once('../elements/bookingManagement.php');
+require_once(dirname(__DIR__).'/models/bookingShowManagement.php');
+require_once(dirname(__DIR__).'/models/bookingManagement.php');
+require_once(dirname(__DIR__).'/models/showComputer.php');
+require_once(dirname(__DIR__).'/elements/modal/registerAdd.php');
+require_once(dirname(__DIR__).'/elements/modal/deleteBooking.php');
+require_once(dirname(__DIR__).'/elements/bookingManagement.php');
 
 ?>
 </div>
@@ -19,4 +19,4 @@ require_once('../elements/bookingManagement.php');
 
 </section>
 
-<?php require_once('../elements/footer.php');?>
+<?php require_once(dirname(__DIR__).'/elements/footer.php');?>

@@ -1,5 +1,7 @@
 
-<?php require_once('../elements/header.php');?>
+<?php require_once(dirname(__DIR__).'/elements/header.php');?>
+<div class="row">
+<div class="col">
 <section>
 <div class="d-flex justify-content-center mt-5">
     <form action="../models/loginConnect.php" method="POST" class="form-login border shadow p-4">
@@ -20,4 +22,6 @@
     </form>
 </div>
 </section>
-<?php require_once('../elements/footer.php');
+</div>
+</div>
+<?php require_once(dirname(__DIR__).'/elements/footer.php');

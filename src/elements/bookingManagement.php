@@ -57,7 +57,7 @@
 <div>
 <!-- tableau d'affichage à partir de l'identifiant -->
 <div  class="form-tables">
-  <table class="table table-striped">
+  <table class="table table-striped table-responsive">
     <thead>
       <tr>
         <th scope="col" class="text-center">Nom</th>
@@ -112,8 +112,8 @@
 <form action="" method="POST" class="ms-5 bg-light p-2 rounded">
   <div class="mb-4 mt-4">
     <div class="form-floating mb-3">
-      <input type="number" class="form-control form-date" id="floatingIdentity" placeholder="0000" required name="select_identity_user">
-      <label for="floatingIdentity">Identifiant*</label>
+      <input type="number" class="form-control form-date" id="floatingIdentityUser" placeholder="0000" required name="select_identity_user">
+      <label for="floatingIdentityUser">Identifiant*</label>
     </div>
     <p class="mb-1">*Obligatoire</p>
     
@@ -123,7 +123,7 @@
 </form>
 </div>
 
-<div class="form-tables mb-5">
+<div class="form-tables mb-5  table-responsive">
 <!-- tableau de gestion -->
 <table class="table table-striped">
   <thead>
@@ -142,7 +142,7 @@
   <?php if(isset($_POST["booking_show_register"]) or isset($_POST["select_identity"])):?>
     <?php foreach($users as $user):?>
     <tr>
-      <td scope="row" class="text-center"><?= (new DateTime(htmlspecialchars($user->date).'00:00:00'))->format('d/m/Y')?>
+      <td scope="row" class="text-center"><?= (new DateTime(htmlspecialchars($user->date).'00:00:00'))->format('d/m/Y')?></td>
       <td class="text-center"><?= htmlspecialchars($user->horaire); ?></td>
       <td class="text-center"><?= htmlspecialchars($user->numero_poste); ?></td>
       <td class="text-center"><?= htmlspecialchars($user->nom_utilisateur); ?></td>

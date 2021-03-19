@@ -7,17 +7,17 @@ $error = null;
 //Connexion à la BDD
 $db = Connection::getPDO();
 if($db){
-    if(isset($_POST["booking_show_register"])){
+    if(isset($_POST["home_date_choose"])){
         try{  
-            $poste = htmlspecialchars($_POST["id_poste_show"], ENT_QUOTES); 
-            $date=htmlspecialchars($_POST["date_show"], ENT_QUOTES); 
-            $horaire = htmlspecialchars($_POST["time_date_show"], ENT_QUOTES);  
+            
+            $date=htmlspecialchars($_POST["search_date"], ENT_QUOTES); 
+              
             //all user ok
             $query = $db->query("SELECT * 
             FROM `creneaux`
             INNER JOIN `utilisateurs` ON creneaux.id_utilisateur = utilisateurs.id_utilisateurs
             INNER JOIN `postes` ON creneaux.id_poste = postes.id_postes
-            WHERE `id_poste`= $poste AND  horaire = '$horaire' AND `date` = '$date';
+            WHERE  `date` = '$date';
             ");
             $users = $query->fetchAll(PDO::FETCH_OBJ);
 
@@ -27,16 +27,16 @@ if($db){
                 exit();
             }
         }else{
-        if(isset($_POST["select_identity"])){
+        if(isset($_POST["show_register"])){
             try{  
-                $identity_user = htmlspecialchars($_POST["select_identity_user"], ENT_QUOTES); 
+                $user_identity = htmlspecialchars($_POST["user_identity"], ENT_QUOTES); 
                  
                 //all user ok
                 $query = $db->query("SELECT * 
                 FROM `creneaux`
                 INNER JOIN `utilisateurs` ON creneaux.id_utilisateur = utilisateurs.id_utilisateurs
                 INNER JOIN `postes` ON creneaux.id_poste = postes.id_postes
-                WHERE `numero_utilisateur`= $identity_user;
+                WHERE `numero_utilisateur`= $user_identity;
                 ");
                 $users = $query->fetchAll(PDO::FETCH_OBJ);
            

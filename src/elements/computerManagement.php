@@ -1,6 +1,7 @@
 
 <section>
-<table class="table">
+  <div class="table-responsive">
+<table class="table table-striped">
   <thead>
     <tr>
       <th scope="col" class="text-center">Nom</th>
@@ -29,4 +30,5 @@
   <?php endforeach; ?> 
   </tbody>
 </table>
+</div>
 </section>

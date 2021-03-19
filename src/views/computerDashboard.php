@@ -1,4 +1,4 @@
-<?php require_once('../elements/header.php');?>
+<?php require_once(dirname(__DIR__).'/elements/header.php');?>
 
 
 <section class="row">
@@ -7,11 +7,11 @@
 
 <?php
 
-require_once('../models/showComputer.php');
-require_once('../elements/modal/registerComputer.php');
-require_once('../elements/modal/editComputer.php');
-require_once('../elements/modal/deleteComputer.php');
-require_once('../elements/computerManagement.php');
+require_once(dirname(__DIR__).'/models/showComputer.php');
+require_once(dirname(__DIR__).'/elements/modal/registerComputer.php');
+require_once(dirname(__DIR__).'/elements/modal/editComputer.php');
+require_once(dirname(__DIR__).'/elements/modal/deleteComputer.php');
+require_once(dirname(__DIR__).'/elements/computerManagement.php');
 
 ?>
 </div>
@@ -19,4 +19,4 @@ require_once('../elements/computerManagement.php');
 
 </section>
 
-<?php require_once('../elements/footer.php');?>
+<?php require_once(dirname(__DIR__).'/elements/footer.php');?>
