@@ -2,7 +2,7 @@
 <?php require_once('../elements/header.php');?>
 <section>
 <div class="d-flex justify-content-center mt-5">
-    <form action="../models/loginUser.php" method="POST" class="form-login border shadow p-4">
+    <form action="../models/loginConnect.php" method="POST" class="form-login border shadow p-4">
         <div class="form-floating mb-3">
             <input type="text" class="form-control" id="floatingLastName" placeholder="Nom" required name="identity">
             <label for="floatingLastName">Identifiant*</label>

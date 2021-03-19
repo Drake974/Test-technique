@@ -22,3 +22,9 @@ body{
 .form-login{
     width:400px;
 }
+.form-bouton{
+    width: 250px;
+}
+.form-tables{
+    height: 100px;
+}

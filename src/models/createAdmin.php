@@ -37,8 +37,8 @@ if($error == null) {
 
     $filters = [
         
-        'nom_utilisateur' => 'trim|escape|capitalize|htmlspecialchars',
-        'prenom_utilisateur' => 'trim|escape|capitalize|htmlspecialchars',
+        'nom_utilisateur' => 'trim|lowercase|escape|htmlspecialchars',
+        'prenom_utilisateur' => 'trim|lowercase|escape|htmlspecialchars',
         'password' => 'hash',
     ];
     

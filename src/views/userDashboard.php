@@ -2,11 +2,8 @@
 
 
 <section class="row">
-<div class="col-md-2 col-sm-12 dashboard d-flex flex-column justify-content-center align-items-center">
 
-<?php require_once('../elements/sidebar.php'); ?>
-</div>
-<div class="col-md-10 col-sm-12">
+<div class="col">
 
 <?php
 

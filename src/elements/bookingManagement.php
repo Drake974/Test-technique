@@ -1,42 +1,50 @@
 
-<h2 class="text-center">Gestion des réservations</h2>
+<h2 class="text-center mt-4">Gestion des réservations</h2>
 
 <!-- recherche par l'identifiant -->
+<div class="d-flex justify-content-center">
 <form action="" method="POST">
   <div class="mb-4 mt-4">
     <div class="form-floating mb-3">
       <input type="number" class="form-control form-date" id="floatingIdentity" placeholder="0000" required name="user_show">
-      <label for="floatingIdentity">Numéro*</label>
+      <label for="floatingIdentity">Identifiant*</label>
     </div>
-      <button type="submit" class="btn btn-primary" name="show_user">Afficher</button>
+    <p class="mb-1">*Obligatoire</p>
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-primary form-bouton" name="show_user">Afficher</button>
+      </div>
   </div>
 </form>
+</div>
   
 <?php if(isset($_POST["show_user"]) and !$resultats){
   echo('<p>Cette identifiant n\'est pas enregistré</p>');
 };?>
 <div>
 <!-- tableau d'affichage à partir de l'identifiant -->
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col" class="text-center">Nom</th>
-      <th scope="col" class="text-center">Prénom</th>
-      <th scope="col" class="text-center">N° d'inscription</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php if(isset($_POST["show_user"])):?>
-      <?php foreach($resultats as $resultat):?>
-        <tr>
-          <td scope="row" class="text-center"><?= htmlspecialchars($resultat->nom_utilisateur); ?></td>
-          <td class="text-center"><?= htmlspecialchars($resultat->prenom_utilisateur); ?></td>
-          <td class="text-center"><?= htmlspecialchars($resultat->numero_utilisateur); ?></td>
-        </tr>
-      <?php endforeach; ?>
-    <?php endif;?>
-  </tbody>
-</table>
+<div  class="form-tables">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" class="text-center">Nom</th>
+        <th scope="col" class="text-center">Prénom</th>
+        <th scope="col" class="text-center">N° d'inscription</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php if(isset($_POST["show_user"])):?>
+        <?php foreach($resultats as $resultat):?>
+          <tr>
+            <td scope="row" class="text-center"><?= htmlspecialchars($resultat->nom_utilisateur); ?></td>
+            <td class="text-center"><?= htmlspecialchars($resultat->prenom_utilisateur); ?></td>
+            <td class="text-center"><?= htmlspecialchars($resultat->numero_utilisateur); ?></td>
+          </tr>
+        <?php endforeach; ?>
+      <?php endif;?>
+    </tbody>
+  </table>
+</div>
+<div class="d-flex justify-content-center">
 <form action="../models/bookingAddManagement.php" method="POST">
   <input type="hidden" name="booking_user_id" value="<?php 
     if(isset($_POST["show_user"])){
@@ -58,26 +66,29 @@
     <option value="8H-9H">15H-16H</option>
     <option value="8H-9H">16H-17H</option>
   </select>
+  
   <!-- selection du poste -->
-  <select class="form-select form-date" aria-label="select" name="id_poste" required>
+  <select class="form-select form-date mb-2 mt-2" aria-label="select" name="id_poste" required>
     <?php foreach($freeComputers as $freeComputer):?>
       <option value="<?= htmlspecialchars($freeComputer->id_postes); ?>">Poste n° <?= htmlspecialchars($freeComputer->numero_poste); ?></option>
     <?php endforeach; ?>
   </select>
   <!-- bouton pour reserver -->
-  <button type="submit" class="btn btn-primary" name="booking_choose">Reserver</button>
+  <button type="submit" class="btn btn-primary form-bouton" name="booking_choose">Reserver</button>
     
 </form>
 </div>
+</div>
 <!-- ////////////////////////////////////////////////////////////// -->
-<h2 class="text-center">Liste des réservations</h2>
+<h2 class="text-center mt-4 mb-4">Liste des réservations</h2>
+<div class="d-flex justify-content-center">
 <form action="" method="POST">
 <div class="form-floating mb-3">
     <input type="date" class="form-control form-date" id="floatingDateUser" placeholder="00/00/0000" name="date_show" required>
     <label for="floatingDateUSer">Choisir la date</label>
   </div>
   <!-- selection de l'horaire   -->
-  <select class="form-select form-date" aria-label="select" name="time_date_show" required> 
+  <select class="form-select form-date mb-2" aria-label="select" name="time_date_show" required> 
     <option value="8H-9H">8H-9H</option>
     <option value="8H-9H">9H-10H</option>
     <option value="8H-9H">10H-11H</option>
@@ -88,15 +99,16 @@
     <option value="8H-9H">16H-17H</option>
   </select>
   <!-- selection du poste -->
-  <select class="form-select form-date" aria-label="select" name="id_poste_show" required>
+  <select class="form-select form-date mb-2 mt-2" aria-label="select" name="id_poste_show" required>
     <?php foreach($freeComputers as $freeComputer):?>
       <option value="<?= htmlspecialchars($freeComputer->id_postes); ?>">Poste n° <?= htmlspecialchars($freeComputer->numero_poste); ?></option>
     <?php endforeach; ?>
   </select>
   <!-- bouton pour reserver -->
-  <button type="submit" class="btn btn-primary" name="booking_show_register">Afficher</button>
+  <button type="submit" class="btn btn-primary form-bouton" name="booking_show_register ">Afficher</button>
     
 </form>
+</div>
 <!-- tableau de gestion -->
 <table class="table">
   <thead>
