@@ -1,4 +1,4 @@
-<?php require_once(dirname(__DIR__).'/controllers/session.php'); ?>
+<?php require_once(dirname(__DIR__).'/controllers/session/session.php'); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

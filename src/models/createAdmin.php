@@ -1,7 +1,7 @@
 <?php 
 require_once(dirname(__DIR__).'/elements/modal/registerUser.php');
 require_once(dirname(__DIR__).'/class/Connection.php');
-require_once(dirname(__DIR__).'/controllers/session.php');
+require_once(dirname(__DIR__).'/controllers/session/session.php'); 
 use \Waavi\Sanitizer\Sanitizer;
 
 $error = null;
