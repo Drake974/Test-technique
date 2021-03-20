@@ -8,7 +8,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="../models/editComputer.php" method="POST">
+      <form action="../models/editComputer.php" method="POST" id="editComputerModal">
         <div class="form-floating mb-3">
             <input type="number" class="form-control" id="floatingComputerEdit" placeholder="00" required value="<?= htmlspecialchars($computer->numero_poste); ?>" name="edit_computer_number">
             <label for="floatingComputerEdit">Numéro*</label>
@@ -17,7 +17,7 @@
         <p>* Obligatoire</p>
         <div  class="text-center">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-        <button type="submit" class="btn btn-warning">
+        <button type="submit" class="btn btn-warning" id="btnEditComputer">Modifier</button>
         </div>
         
      </form>

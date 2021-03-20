@@ -162,6 +162,7 @@ const loginPage = () => {
     })
 }
 //page destion des ordinateurs
+//ajout
 const addComputer = () => {
     validator = $("#addComputer").validate({
         errorElement: "em",
@@ -180,7 +181,7 @@ const addComputer = () => {
             $( element ).addClass( "is-valid" ).removeClass( "is-invalid" );
         },
         rules: {
-            user_identity:{
+            register_number_computer:{
                 required: true,
                 digits: true,
                 min: 1000,
@@ -190,8 +191,35 @@ const addComputer = () => {
         
     })
 }
-
-
+//modifier
+const editComputer = () => {
+    validator = $("#editComputerModal").validate({
+        errorElement: "em",
+        errorPlacement: function ( error, element ) {
+            element.addClass( "is-invalid" );
+            if ( element.prop( "type" ) === "checkbox" ) {
+                error.insertAfter( element.parent( "label" ) );
+            } else {
+                error.insertAfter( element );
+            }
+        },
+        highlight: function ( element ) {
+            $( element ).addClass( "is-invalid" ).removeClass( "is-valid" );
+        },
+        unhighlight: function ( element ) {
+            $( element ).addClass( "is-valid" ).removeClass( "is-invalid" );
+        },
+        rules: {
+            edit_computer_number:{
+                required: true,
+                digits: true,
+                min: 1000,
+                max: 9999
+            }
+        }
+        
+    })
+}
 //******************************************************************* */
 //REGLES COMMUNES
 //******************************************************************* */

@@ -15,7 +15,7 @@ Ajouter un ordinateur
       </div>
       <div class="modal-body">
       <p>Numéro du poste à rajouter</p>
-      <form action="../models/createComputer.php" method="POST">
+      <form action="../models/createComputer.php" method="POST" id="addComputer">
         <div class="form-floating mb-3">
             <input type="number" class="form-control" id="floatingComputer" placeholder="0000" required name="register_number_computer">
             <label for="floatingComputer">Numéro*</label>
@@ -23,7 +23,7 @@ Ajouter un ordinateur
         <p>* Obligatoire</p>
         <div  class="text-center">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-        <button type="submit" class="btn btn-warning" name="register_computer">Ajouter</button>
+        <button type="submit" class="btn btn-warning" name="register_computer" id="btnAddComputer">Ajouter</button>
         </div>
         
      </form>
