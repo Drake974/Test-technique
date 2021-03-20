@@ -5,7 +5,7 @@
 
 <div class="d-flex justify-content-around mb-4">
 <div>
-<form action="#show_user_register" method="POST" class="bg-light p-2 rounded">
+<form action="#show_user_register" method="POST" class="bg-light p-2 rounded" id="formUserRegister">
   <div class="mb-4 mt-4">
     <div class="form-floating mb-3">
       <input type="number" class="form-control form-date" id="floatingIdentity" placeholder="0000" required name="user_show">
@@ -22,7 +22,7 @@
   echo('<p class=text-center>Cette identifiant n\'est pas enregistré</p>');
 };?>
 </div>
-<form action="../models/bookingAddManagement.php" method="POST" class="bg-light p-2 rounded">
+<form action="../models/bookingAddManagement.php" method="POST" class="bg-light p-2 rounded" id="formDateRegister">
   <input type="hidden" name="booking_user_id" value="<?php 
     if(isset($_POST["show_user"])){
     foreach($resultats as $resultat){
@@ -51,7 +51,7 @@
     <?php endforeach; ?>
   </select>
   <!-- bouton pour reserver -->
-  <button type="submit" class="btn btn-warning form-bouton" name="booking_choose">Reserver</button>
+  <button type="submit" class="btn btn-warning form-bouton" name="booking_choose" id="btnBookingChoose">Reserver</button>
     
 </form>
 
@@ -88,7 +88,7 @@
 <!-- ////////////////////////////////////////////////////////////// -->
 <h2 class="text-center mt-5 mb-5">Liste des réservations</h2>
 <div class="d-flex justify-content-around mb-4">
-<form action="" method="POST" class="bg-light p-2 rounded">
+<form action="" method="POST" class="bg-light p-2 rounded" id="formDateBooking">
 <div class="form-floating mb-3">
     <input type="date" class="form-control form-date" id="floatingDateUser" placeholder="00/00/0000" name="date_show" required>
     <label for="floatingDateUSer">Choisir la date</label>
@@ -111,11 +111,11 @@
     <?php endforeach; ?>
   </select>
   <!-- bouton pour reserver -->
-  <button type="submit" class="btn btn-warning form-bouton" name="booking_show_register">Afficher</button>
+  <button type="submit" class="btn btn-warning form-bouton" name="booking_show_register" id="showBooking">Afficher</button>
     
 </form>
 <div>
-<form action="#show_register" method="POST" class="ms-5 bg-light p-2 rounded">
+<form action="#showRegisterBtn" method="POST" class="ms-5 bg-light p-2 rounded" id="formIdentitySelect">
   <div class="mb-4 mt-4">
     <div class="form-floating mb-3">
       <input type="number" class="form-control form-date" id="floatingIdentityUser" placeholder="0000" required name="select_identity_user">
@@ -123,7 +123,7 @@
     </div>
     <p class="mb-1">*Obligatoire</p>
     
-      <button type="submit" class="btn btn-warning form-bouton" name="select_identity" id="show_register">Afficher</button>
+      <button type="submit" class="btn btn-warning form-bouton" name="select_identity" id="showRegisterBtn">Afficher</button>
       
   </div>
 </form>
