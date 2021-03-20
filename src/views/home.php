@@ -3,7 +3,7 @@
 <?php require_once(dirname(__DIR__).'/models/showHome.php');?>
 
 <h1 class="text-center">CENTRE CULTUREL</h1>
-<section class="container-fluid">
+
 <div class="row">
   <div class="col">
 <div class="d-flex justify-content-around mb-4 mt-4 flex-wrap">
@@ -14,12 +14,12 @@
 </div>
 <p class="mb-1">*Obligatoire</p>
 <div class="d-flex justify-content-center">
-<button type="submit" class="btn btn-warning form-bouton" name="home_date_choose">Rechercher</button>
+<button type="submit" class="btn btn-warning form-bouton" name="home_date_choose" id="home_date">Rechercher</button>
 </div>
 </form>
 <!-- recherche par l'identifiant -->
 
-<form action="" method="POST" class="bg-light p-2 rounded">
+<form action="" method="POST" class="bg-light p-2 rounded" id="homeIdentity">
   <div class="mb-4 mt-4">
     <div class="form-floating mb-4">
       <input type="number" class="form-control form-date" id="floatingChoose" placeholder="0000" required name="user_identity">
@@ -27,10 +27,10 @@
     </div>
     <p class="mb-1">*Obligatoire</p>
     <div class="d-flex justify-content-center">
-      <button type="submit" class="btn btn-warning form-bouton" name="show_register">Afficher</button>
+      <button type="submit" class="btn btn-warning form-bouton" name="show_register" id="show_register">Afficher</button>
       </div>
       <?php if(isset($_POST["show_register"]) and !$users){
-  echo('<p class=text-center>Cette identifiant n\'est pas enregistré</p>');
+  echo('<p class=text-center>Aucune réservation</p>');
 };?>
   </div>
 </form>
@@ -67,6 +67,25 @@
 </div>
 </div>
 </div>
-</section>
 
-<?php require_once(dirname(__DIR__).'/elements/footer.php');
+
+<?php require_once(dirname(__DIR__).'/elements/footer.php');?>
+<script>
+//recherche par date
+document.getElementById('home_date').addEventListener("click", (e)=>{  
+    e.preventDefault();
+    homeDate();
+    if ($('#homeDateChoose').valid()){ 
+        document.getElementById('homeDateChoose').submit();
+    };   
+});
+//recherche par identifiant
+document.getElementById('show_register').addEventListener("click", (e)=>{  
+    e.preventDefault();
+    homeIdentity();
+    if ($('#homeIdentity').valid()){ 
+        document.getElementById('homeIdentity').submit();
+    };   
+});
+</script>
+<?php require_once(dirname(__DIR__).'/elements/end.php');?>

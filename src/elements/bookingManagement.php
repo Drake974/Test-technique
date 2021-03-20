@@ -2,8 +2,10 @@
 <h2 class="text-center mb-5">Gestion des réservations</h2>
 
 <!-- recherche par l'identifiant -->
+
 <div class="d-flex justify-content-around mb-4">
-<form action="" method="POST" class="bg-light p-2 rounded">
+<div>
+<form action="#show_user_register" method="POST" class="bg-light p-2 rounded">
   <div class="mb-4 mt-4">
     <div class="form-floating mb-3">
       <input type="number" class="form-control form-date" id="floatingIdentity" placeholder="0000" required name="user_show">
@@ -11,11 +13,15 @@
     </div>
     <p class="mb-1">*Obligatoire</p>
     <div class="d-flex justify-content-center">
-      <button type="submit" class="btn btn-warning form-bouton" name="show_user">Afficher</button>
+      <button type="submit" class="btn btn-warning form-bouton" name="show_user" id="show_user_register">Afficher</button>
       </div>
   </div>
 </form>
 
+<?php if(isset($_POST["show_user"]) and !$resultats){
+  echo('<p class=text-center>Cette identifiant n\'est pas enregistré</p>');
+};?>
+</div>
 <form action="../models/bookingAddManagement.php" method="POST" class="bg-light p-2 rounded">
   <input type="hidden" name="booking_user_id" value="<?php 
     if(isset($_POST["show_user"])){
@@ -48,15 +54,14 @@
   <button type="submit" class="btn btn-warning form-bouton" name="booking_choose">Reserver</button>
     
 </form>
+
 </div>
 
 
-<?php if(isset($_POST["show_user"]) and !$resultats){
-  echo('<p class=text-center>Cette identifiant n\'est pas enregistré</p>');
-};?>
+
 <div>
 <!-- tableau d'affichage à partir de l'identifiant -->
-<div  class="form-tables">
+<div  class="form-tables" >
   <table class="table table-striped table-responsive">
     <thead>
       <tr>
@@ -109,7 +114,8 @@
   <button type="submit" class="btn btn-warning form-bouton" name="booking_show_register">Afficher</button>
     
 </form>
-<form action="" method="POST" class="ms-5 bg-light p-2 rounded">
+<div>
+<form action="#show_register" method="POST" class="ms-5 bg-light p-2 rounded">
   <div class="mb-4 mt-4">
     <div class="form-floating mb-3">
       <input type="number" class="form-control form-date" id="floatingIdentityUser" placeholder="0000" required name="select_identity_user">
@@ -117,10 +123,14 @@
     </div>
     <p class="mb-1">*Obligatoire</p>
     
-      <button type="submit" class="btn btn-warning form-bouton" name="select_identity">Afficher</button>
+      <button type="submit" class="btn btn-warning form-bouton" name="select_identity" id="show_register">Afficher</button>
       
   </div>
 </form>
+<?php if(isset($_POST["select_identity"]) and !$users){
+  echo('<p class=text-center>Cette identifiant n\'est pas enregistré</p>');
+};?>
+</div>
 </div>
 
 <div class="form-tables mb-5  table-responsive">

@@ -14,7 +14,7 @@ Enregistrer un utilisateur
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="../models/createUser.php" method="POST">
+      <form action="../models/createUser.php" method="POST" id="modalAddUser">
         <div class="form-floating mb-3">
             <input type="text" class="form-control" id="floatingLastName" placeholder="Nom" required name="last_name">
             <label for="floatingLastName">Nom*</label>
@@ -30,7 +30,7 @@ Enregistrer un utilisateur
         <p>* Obligatoire</p>
         <div  class="text-center">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-        <button type="submit" class="btn btn-warning" name="register_user">Enregistrer</button>
+        <button type="submit" class="btn btn-warning" name="register_user" id="modalAddRegister">Enregistrer</button>
         </div>
         
      </form>

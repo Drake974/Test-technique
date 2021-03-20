@@ -22,3 +22,24 @@
 
 
 <?php require_once(dirname(__DIR__).'/elements/footer.php');?>
+<script>
+//ajout de l'utisateur modal
+document.getElementById('modalAddRegister').addEventListener("click", (e)=>{  
+    e.preventDefault();
+    //Verification du login
+    addUser();
+    if ($('#modalAddUser').valid()){ 
+        document.getElementById('modalAddUser').submit();
+    };   
+});
+//modal modification
+document.getElementById('btnEditRegister').addEventListener("click", (e)=>{  
+    e.preventDefault();
+    //Verification du login
+    editUser();
+    if ($('#modalEditUser').valid()){ 
+        document.getElementById('modalEditUser').submit();
+    };   
+});
+</script>
+<?php require_once(dirname(__DIR__).'/elements/end.php');?>

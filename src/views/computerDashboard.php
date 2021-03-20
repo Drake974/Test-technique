@@ -21,3 +21,4 @@ require_once(dirname(__DIR__).'/elements/computerManagement.php');
 </section>
 
 <?php require_once(dirname(__DIR__).'/elements/footer.php');?>
+<?php require_once(dirname(__DIR__).'/elements/end.php');?>

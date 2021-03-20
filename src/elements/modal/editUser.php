@@ -9,7 +9,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="../models/editUser.php" method="POST">
+      <form action="../models/editUser.php" method="POST" id="modalEditUser">
         <div class="form-floating mb-3">
             <input type="text" class="form-control" id="lastNameUserEdit" placeholder="Nom" required value="<?= htmlspecialchars($utilisateur->nom_utilisateur); ?>" name="last_name_edit">
             <label for="lastNameUserEdit">Nom*</label>
@@ -26,7 +26,7 @@
         <p>* Obligatoire</p>
         <div  class="text-center">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-        <button type="submit" class="btn btn-warning" name="edit_user">Modifier</button>
+        <button type="submit" class="btn btn-warning" name="edit_user" id="btnEditRegister">Modifier</button>
         </div>
         
      </form>

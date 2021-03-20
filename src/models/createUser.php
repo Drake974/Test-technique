@@ -54,7 +54,7 @@ if($error == null) {
          ));
          $result = $sth->fetchAll(PDO::FETCH_OBJ);
          if($result){
-            $_SESSION['flash'] = array('Error',"Echec lors de l'enregistrement", "Choisir un autre identifiant!");
+            $_SESSION['flash'] = array('Error',"L'identifiant existe déjà!", "Choisir un autre identifiant!");
             header("Location: ../views/userDashboard.php");
 
          }else{
