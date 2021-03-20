@@ -1,3 +1,4 @@
+<?php require_once(dirname(__DIR__).'/controllers/session/session.php'); ?>
 <?php require_once(dirname(__DIR__).'/elements/header.php');?>
 <?php require_once(dirname(__DIR__).'/models/showHome.php');?>
 
