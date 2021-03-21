@@ -6,11 +6,16 @@ Créer une application sécurisée qui permet de gérer l’attribution des post
 
 ## Stories :
 | En tant que | Je veux | Afin de |
-| :-----------| :-------| :-------|
-|En tant qu’administrateur |je veux pouvoir me connecter à une interface sécurisée.
-|En tant qu’administrateur| je veux pouvoir créer / modifier / supprimer un utilisateur.
-|En tant qu’administrateur| je veux pouvoir créer / modifier / supprimer un ordinateur.
-|En tant qu’administrateur| je veux pouvoir attribuer un ordinateur à un utilisateur, à une date et sur un créneau horaire.
-|En tant qu’administrateur| je veux voir toutes les attributions.
-|En tant qu’administrateur| je veux pouvoir annuler une attribution.
+| :----------| :--------| :--------|
+|En tant qu’administrateur |me connecter à une interface sécurisée|accèder à une interface dédié|
+|En tant qu’administrateur|créer un utilisateur|attribuer des postes|
+|En tant qu’administrateur|modifier un utilisateur| corriger une erreur|
+|En tant qu’administrateur|supprimer un utilisateur| retirer les inactifs|
+|En tant qu’administrateur| créer ordinateur| identifier un nouveau poste|
+|En tant qu’administrateur| modifier ordinateur| corriger si erreur |
+|En tant qu’administrateur| supprimer un ordinateur| enlever un ordinateur en panne par exemple|
+|En tant qu’administrateur| attribuer un ordinateur à un utilisateur, à une date et sur un créneau horaire| gérer les réservations|
+|En tant qu’administrateur| voir toutes les attributions| visualiser les diponibilités|
+|En tant qu’administrateur| annuler une attribution| rendre un poste libre (annulation)|
+
 ## Technologies à utiliser :
