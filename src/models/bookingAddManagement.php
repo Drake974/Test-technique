@@ -7,7 +7,7 @@ $error = null;
 
 
 //Validation des données cote serveur + securite specialchars
-$inputRequired = ['date_poste', 'id_poste', 'time_date'];
+$inputRequired = ['date_poste', 'id_poste', 'time_date','booking_user_id'];
 foreach($inputRequired as $value){
     if($_POST["$value"] == ""){
         $error = true;
@@ -47,6 +47,21 @@ if($error == null) {
     if($db){
 
         try{
+            $poste = htmlspecialchars($_POST["id_poste"], ENT_QUOTES); 
+            $date=htmlspecialchars($_POST["date_poste"], ENT_QUOTES); 
+            $horaire = htmlspecialchars($_POST["time_date"], ENT_QUOTES);  
+            //all user ok
+            $query = $db->query("SELECT * 
+            FROM `creneaux`
+            INNER JOIN `utilisateurs` ON creneaux.id_utilisateur = utilisateurs.id_utilisateurs
+            INNER JOIN `postes` ON creneaux.id_poste = postes.id_postes
+            WHERE `id_poste`= $poste AND  horaire = '$horaire' AND `date` = '$date';
+            ");
+            $users = $query->fetchAll(PDO::FETCH_OBJ);
+            if($users){
+                $_SESSION['flash'] = array('Error', "Attribution déjà prise");
+                header("Location: ../views/bookingDashboard.php");
+            }else{
             $db->beginTransaction();
             
             //AJOUT TABLE UTILISATEURS
@@ -65,6 +80,7 @@ if($error == null) {
             $_SESSION['flash'] = array('Success', "Reservation créé avec succès");
             
            header("Location: ../views/bookingDashboard.php");
+        }
         }catch(PDOException $e){
             $error = $e->getMessage();
             $db->rollBack();

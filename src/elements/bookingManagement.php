@@ -3,9 +3,10 @@
 
 <!-- recherche par l'identifiant -->
 
-<div class="d-flex justify-content-around mb-4">
+<div class="d-flex flex-wrap justify-content-around mb-4">
 <div>
 <form action="#show_user_register" method="POST" class="bg-light p-2 rounded" id="formUserRegister">
+<p>Etape 1: Vérification de l'identifiant</p>
   <div class="mb-4 mt-4">
     <div class="form-floating mb-3">
       <input type="number" class="form-control form-date" id="floatingIdentity" placeholder="0000" required name="user_show">
@@ -13,7 +14,7 @@
     </div>
     <p class="mb-1">*Obligatoire</p>
     <div class="d-flex justify-content-center">
-      <button type="submit" class="btn btn-warning form-bouton" name="show_user" id="show_user_register">Afficher</button>
+      <button type="submit" class="btn btn-warning form-bouton" name="show_user" id="show_user_register">Verifier</button>
       </div>
   </div>
 </form>
@@ -22,27 +23,30 @@
   echo('<p class=text-center>Cette identifiant n\'est pas enregistré</p>');
 };?>
 </div>
+<div>
+ 
 
 <form action="../models/bookingAddManagement.php" method="POST" class="bg-light p-2 rounded" id="formDateRegister">
+<p>Etape 2: Selectionner la réservation</p>
   <input type="hidden" name="booking_user_id" value="<?php 
     if(isset($_POST["show_user"])){
     foreach($resultats as $resultat){
     echo(htmlspecialchars($resultat->id_utilisateurs));
     }};?>"> 
   <div class="form-floating mb-3">
-    <input type="date" class="form-control form-date" id="floatingInput" placeholder="00/00/0000" name="date_poste" required>
+    <input type="date" class="form-control form-date" id="floatingInput" placeholder="00/00/0000" name="date_poste" required min="<?php echo date("Y-m-d"); ?>" value="<?php echo date("Y-m-d"); ?>">
     <label for="floatingInput">Choisir la date</label>
   </div>
   <!-- selection de l'horaire   -->
   <select class="form-select form-date" aria-label="select" name="time_date" required> 
     <option value="8H-9H">8H-9H</option>
-    <option value="8H-9H">9H-10H</option>
-    <option value="8H-9H">10H-11H</option>
-    <option value="8h-9H">11H-12H</option>
-    <option value="8H-9H">13H-14H</option>
-    <option value="8H-9H">14H-15h</option>
-    <option value="8H-9H">15H-16H</option>
-    <option value="8H-9H">16H-17H</option>
+    <option value="9H-10H">9H-10H</option>
+    <option value="10H-11H">10H-11H</option>
+    <option value="11h-12H">11H-12H</option>
+    <option value="13H-14H">13H-14H</option>
+    <option value="14H-15H">14H-15h</option>
+    <option value="15H-16H">15H-16H</option>
+    <option value="16H-17H">16H-17H</option>
   </select>
   
   <!-- selection du poste -->
@@ -55,7 +59,7 @@
   <button type="submit" class="btn btn-warning form-bouton" name="booking_choose" id="btnBookingChoose">Reserver</button>
     
 </form>
-
+</div>
 </div>
 
 
@@ -88,22 +92,23 @@
 </div>
 <!-- ////////////////////////////////////////////////////////////// -->
 <h2 class="text-center mt-5 mb-5">Liste des réservations</h2>
-<div class="d-flex justify-content-around mb-4">
+<div class="d-flex flex-wrap justify-content-around mb-4">
 <form action="" method="POST" class="bg-light p-2 rounded" id="formDateBooking">
+  <p class="text-center">Consulter par réservation</p>
 <div class="form-floating mb-3">
-    <input type="date" class="form-control form-date" id="floatingDateUser" placeholder="00/00/0000" name="date_show" required>
+    <input type="date" class="form-control form-date" id="floatingDateUser" placeholder="00/00/0000" name="date_show" required  value="<?php echo date("Y-m-d"); ?>">
     <label for="floatingDateUSer">Choisir la date</label>
   </div>
   <!-- selection de l'horaire   -->
   <select class="form-select form-date mb-2" aria-label="select" name="time_date_show" required> 
     <option value="8H-9H">8H-9H</option>
-    <option value="8H-9H">9H-10H</option>
-    <option value="8H-9H">10H-11H</option>
-    <option value="8H-9H">11H-12H</option>
-    <option value="8H-9H">13H-14H</option>
-    <option value="8H-9H">14H-15H</option>
-    <option value="8H-9H">15H-16H</option>
-    <option value="8H-9H">16H-17H</option>
+    <option value="9H-10H">9H-10H</option>
+    <option value="10H-11H">10H-11H</option>
+    <option value="11H-12H">11H-12H</option>
+    <option value="13H-14H">13H-14H</option>
+    <option value="14H-15H">14H-15H</option>
+    <option value="15H-16H">15H-16H</option>
+    <option value="16H-17H">16H-17H</option>
   </select>
   <!-- selection du poste -->
   <select class="form-select form-date mb-2 mt-2" aria-label="select" name="id_poste_show" required>
@@ -115,8 +120,9 @@
   <button type="submit" class="btn btn-warning form-bouton" name="booking_show_register" id="showBooking">Afficher</button>
     
 </form>
-<div>
-<form action="#showRegisterBtn" method="POST" class="ms-5 bg-light p-2 rounded" id="formIdentitySelect">
+
+<form action="#showRegisterBtn" method="POST" class="bg-light p-2 rounded" id="formIdentitySelect">
+<p class="text-center">Consulter par identifiant</p>
   <div class="mb-4 mt-4">
     <div class="form-floating mb-3">
       <input type="number" class="form-control form-date" id="floatingIdentityUser" placeholder="0000" required name="select_identity_user">
@@ -133,7 +139,6 @@
 };?>
 </div>
 </div>
-<?php var_dump($_POST);?>
 <div class="form-tables mb-5  table-responsive">
 <!-- tableau de gestion -->
 <table class="table table-striped">
@@ -150,7 +155,7 @@
   </thead>
   <tbody>
   <?php ?>
-  <?php if(isset($_POST["booking_show_register"]) or isset($_POST["select_identity_user"])):?>
+  <?php if(isset($_POST["booking_show_register"]) or isset($_POST["select_identity"])):?>
     <?php foreach($users as $user):?>
     <tr>
       <td scope="row" class="text-center"><?= (new DateTime(htmlspecialchars($user->date).'00:00:00'))->format('d/m/Y')?></td>

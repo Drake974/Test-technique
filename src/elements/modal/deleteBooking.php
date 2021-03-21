@@ -1,5 +1,5 @@
 
-  <?php if(isset($_POST["booking_show_register"]) or isset($_POST["select_identity_user"])):?>
+  <?php if(isset($_POST["booking_show_register"]) or isset($_POST["select_identity"])):?>
 
 <?php foreach($users as $user):?>
 <div class="modal fade" id="<?= "deleteBookingrModal_". htmlspecialchars($user->id_creneaux);?>" tabindex="-1" aria-labelledby="deleteBooking" aria-hidden="true">

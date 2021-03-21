@@ -27,6 +27,15 @@ if($db){
         
         ");
         $timeTables = $query->fetchAll(PDO::FETCH_OBJ);
+
+         // all horaire ok
+         $query = $db->query("SELECT 
+         COUNT(*) as nb_poste
+         FROM `postes`
+         
+         ");
+         $nbComputers = $query->fetch();
+    
     
     }catch(PDOException $e){
         $error = $e->getMessage();
