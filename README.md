@@ -18,4 +18,14 @@ Créer une application sécurisée qui permet de gérer l’attribution des post
 |En tant qu’administrateur| voir toutes les attributions| visualiser les diponibilités|
 |En tant qu’administrateur| annuler une attribution| rendre un poste libre (annulation)|
 
-## Technologies à utiliser :
+## Technologies :
+- html
+- css
+- js/jQuery
+- bootstrap 5
+- php
+- apache
+- phpmyadmin
+
+## liens :
+
