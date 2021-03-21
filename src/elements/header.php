@@ -47,7 +47,7 @@
         <!-- navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light p-4">
             <div class="container-fluid">
-                <a class="navbar-brand fw-bold border p-2 rounded" href="../views/home.php">CENTRE CULTUREL</a>
+                <a class="navbar-brand fw-bold border m-1 p-2 rounded" href="../views/home.php">CENTRE CULTUREL</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -57,7 +57,7 @@
                     <ul class="navbar-nav  mb-2 mb-lg-0 ms-auto">
                         <?php if($_SESSION['isLoggedIn']):?>
                         <li class="nav-item">
-                            <a href="../views/userDashboard.php" type="button" class="btn btn-secondary ms-1 me-1 menu">
+                            <a href="../views/userDashboard.php" type="button" class="btn btn-secondary m-1 menu">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-people-fill" viewBox="0 0 16 16">
                                     <path
@@ -71,7 +71,7 @@
                         </li>
                         <?php endif;?>
                         <?php if($_SESSION['isLoggedIn']):?>
-                        <li><a href="../views/computerDashboard.php" type="button" class="btn btn-secondary ms-1 me-1"
+                        <li><a href="../views/computerDashboard.php" type="button" class="btn btn-secondary m-1"
                                 menu>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-laptop-fill" viewBox="0 0 16 16">
@@ -83,7 +83,7 @@
                         <?php endif;?>
                         <?php if($_SESSION['isLoggedIn']):?>
                         <li><a href="../views/bookingDashboard.php" type="button"
-                                class="btn btn-secondary ms-1 me-1 menu">
+                                class="btn btn-secondary m-1 menu">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-gear" viewBox="0 0 16 16">
                                     <path
@@ -96,12 +96,11 @@
                         <?php endif;?>
                         <?php if(!$_SESSION['isLoggedIn']):?>
                         <li class="nav-item">
-                            <a href="../views/login.php" type="button" class="btn btn-secondary" aria-current="page">Se
-                                connecter</a>
+                            <a href="../views/login.php" type="button" class="btn btn-secondary m-1" aria-current="page">Admin</a>
                         </li>
                         <?php else:?>
                         <li class="nav-item">
-                            <a href="../controllers/logout.php" type="button" class=" btn btn-secondary"
+                            <a href="../controllers/logout.php" type="button" class=" btn btn-danger m-1"
                                 aria-current="page"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"

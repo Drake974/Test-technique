@@ -1,13 +1,18 @@
 <?php require_once(dirname(__DIR__).'/controllers/session/session.php'); ?>
 <?php require_once(dirname(__DIR__).'/elements/header.php');?>
 <?php require_once(dirname(__DIR__).'/models/showHome.php');?>
-
-<h1 class="text-center">CENTRE CULTUREL</h1>
+<div class="bg-header d-flex justify-content-center align-items-center">
+  <div class="bg-title">
+<h1 class="bg-light rounded fw-bold display-1 p-5">CENTRE CULTUREL</h1>
+</div>
+</div>
+<h2 class="text-center">Consulter votre réservation</h2>
 
 <div class="row">
     <div class="col">
-        <div class="d-flex justify-content-around mb-4 mt-4 flex-wrap">
+        <div class="d-flex flex-wrap justify-content-around mb-4 mt-4 flex-wrap text-center">
             <form action="" method="post" id="homeDateChoose" class="bg-light p-2 rounded">
+              <p class="text-center">Consulter par date</p>
                 <div class="form-floating  mb-4 mt-3">
                     <input type="date" class="form-control form-date" id="floatingHome" placeholder="00/00/0000"
                         name="search_date" required>
@@ -20,8 +25,9 @@
                 </div>
             </form>
             <!-- recherche par l'identifiant -->
-
+              
             <form action="" method="POST" class="bg-light p-2 rounded" id="homeIdentity">
+            <p class="text-center">Consulter avec votre identifiant</p>
                 <div class="mb-4 mt-4">
                     <div class="form-floating mb-4">
                         <input type="number" class="form-control form-date" id="floatingChoose" placeholder="0000"
@@ -34,8 +40,8 @@
                             id="show_register">Afficher</button>
                     </div>
                     <?php if(isset($_POST["show_register"]) and !$users){
-  echo('<p class=text-center>Aucune réservation</p>');
-};?>
+                      echo('<p class=text-center>Aucune réservation</p>');
+                    };?>
                 </div>
             </form>
         </div>
@@ -45,7 +51,7 @@
                     <tr>
                         <th scope="col" class="text-center">Date</th>
                         <th scope="col" class="text-center">Heure</th>
-                        <th scope="col" class="text-center">Poste reserver</th>
+                        <th scope="col" class="text-center">Poste réserver</th>
                         <th scope="col" class="text-center">Inscrit</th>
 
                     </tr>
@@ -79,9 +85,9 @@
         <?php endif;?>
         </tbody>
         </table>
-    </div>
+  </div>
 </div>
-</div>
+
 
 
 <?php require_once(dirname(__DIR__).'/elements/footer.php');?>

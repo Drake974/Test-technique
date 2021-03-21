@@ -6,6 +6,7 @@
 <div class="d-flex flex-wrap justify-content-around mb-4">
 <div>
 <form action="#show_user_register" method="POST" class="bg-light p-2 rounded" id="formUserRegister">
+<p>Etape 1: Vérification de l'identifiant</p>
   <div class="mb-4 mt-4">
     <div class="form-floating mb-3">
       <input type="number" class="form-control form-date" id="floatingIdentity" placeholder="0000" required name="user_show">
@@ -13,7 +14,7 @@
     </div>
     <p class="mb-1">*Obligatoire</p>
     <div class="d-flex justify-content-center">
-      <button type="submit" class="btn btn-warning form-bouton" name="show_user" id="show_user_register">Afficher</button>
+      <button type="submit" class="btn btn-warning form-bouton" name="show_user" id="show_user_register">Verifier</button>
       </div>
   </div>
 </form>
@@ -22,8 +23,11 @@
   echo('<p class=text-center>Cette identifiant n\'est pas enregistré</p>');
 };?>
 </div>
+<div>
+ 
 
 <form action="../models/bookingAddManagement.php" method="POST" class="bg-light p-2 rounded" id="formDateRegister">
+<p>Etape 2: Selectionner la réservation</p>
   <input type="hidden" name="booking_user_id" value="<?php 
     if(isset($_POST["show_user"])){
     foreach($resultats as $resultat){
@@ -55,7 +59,7 @@
   <button type="submit" class="btn btn-warning form-bouton" name="booking_choose" id="btnBookingChoose">Reserver</button>
     
 </form>
-
+</div>
 </div>
 
 
@@ -90,6 +94,7 @@
 <h2 class="text-center mt-5 mb-5">Liste des réservations</h2>
 <div class="d-flex flex-wrap justify-content-around mb-4">
 <form action="" method="POST" class="bg-light p-2 rounded" id="formDateBooking">
+  <p class="text-center">Consulter par réservation</p>
 <div class="form-floating mb-3">
     <input type="date" class="form-control form-date" id="floatingDateUser" placeholder="00/00/0000" name="date_show" required>
     <label for="floatingDateUSer">Choisir la date</label>
@@ -115,8 +120,9 @@
   <button type="submit" class="btn btn-warning form-bouton" name="booking_show_register" id="showBooking">Afficher</button>
     
 </form>
-<div>
-<form action="#showRegisterBtn" method="POST" class="ms-5 bg-light p-2 rounded" id="formIdentitySelect">
+
+<form action="#showRegisterBtn" method="POST" class="bg-light p-2 rounded" id="formIdentitySelect">
+<p class="text-center">Consulter par identifiant</p>
   <div class="mb-4 mt-4">
     <div class="form-floating mb-3">
       <input type="number" class="form-control form-date" id="floatingIdentityUser" placeholder="0000" required name="select_identity_user">

@@ -7,7 +7,7 @@ $error = null;
 
 
 //Validation des données cote serveur + securite specialchars
-$inputRequired = ['date_poste', 'id_poste', 'time_date'];
+$inputRequired = ['date_poste', 'id_poste', 'time_date','booking_user_id'];
 foreach($inputRequired as $value){
     if($_POST["$value"] == ""){
         $error = true;

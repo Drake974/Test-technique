@@ -3,8 +3,9 @@
 <div class="row">
     <div class="col">
 
-        <div class="d-flex justify-content-center mt-5">
+        <div class="d-flex  justify-content-center mt-5">
             <form action="../models/loginConnect.php" method="POST" class="form-login border shadow p-4" id="loginPage">
+            <h3 class="text-center mb-4">Se connecter</h3>
                 <?php if(isset($_SESSION['flash'])):?>
                 <?php if($_SESSION['flash'][0] == "Success"):?>
                 <div class="alert alert-success">
