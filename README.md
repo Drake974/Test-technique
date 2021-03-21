@@ -29,7 +29,4 @@ Créer une application sécurisée qui permet de gérer l’attribution des post
 
 
 ## liens :
-- Backlog + MCD:
-https://docs.google.com/spreadsheets/d/1NdD7N9uGwvxSMSg_dxKHmjmFHHgfzhlgATzZ3-AW2vY/edit?usp=sharing
-
 

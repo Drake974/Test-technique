@@ -1,16 +1,15 @@
 <?php require_once(dirname(__DIR__).'/controllers/session/session.php'); ?>
 <?php require_once(dirname(__DIR__).'/elements/header.php');?>
-<?php require_once(dirname(__DIR__).'/models/bookingShowManagement.php');
-require_once(dirname(__DIR__).'/models/bookingManagement.php');
-require_once(dirname(__DIR__).'/models/showComputer.php');
-?>
+
 
 <section class="row">
 
 <div class="col">
 
 <?php
-
+require_once(dirname(__DIR__).'/models/bookingShowManagement.php');
+require_once(dirname(__DIR__).'/models/bookingManagement.php');
+require_once(dirname(__DIR__).'/models/showComputer.php');
 require_once(dirname(__DIR__).'/elements/modal/registerAdd.php');
 require_once(dirname(__DIR__).'/elements/modal/deleteBooking.php');
 require_once(dirname(__DIR__).'/elements/bookingManagement.php');
@@ -25,7 +24,7 @@ require_once(dirname(__DIR__).'/elements/bookingManagement.php');
 <script>
 //afficher
 document.getElementById('show_user_register').addEventListener("click", (e)=>{  
-   // e.preventDefault();
+    // e.preventDefault();
     //Verification 
     showUsers();
     if ($('#formUserRegister').valid()){ 
@@ -35,7 +34,7 @@ document.getElementById('show_user_register').addEventListener("click", (e)=>{
 
 //reserver
 document.getElementById('btnBookingChoose').addEventListener("click", (e)=>{  
-   // e.preventDefault();
+    // e.preventDefault();
     //Verification
     userBooking();
     if ($('#formDateRegister').valid()){ 
@@ -45,7 +44,7 @@ document.getElementById('btnBookingChoose').addEventListener("click", (e)=>{
 
 //afficher par date
 document.getElementById('showBooking').addEventListener("click", (e)=>{  
-    //e.preventDefault();
+    // e.preventDefault();
     //Verification 
     showDateBooking();
     if ($('#formDateBooking').valid()){ 
@@ -55,7 +54,7 @@ document.getElementById('showBooking').addEventListener("click", (e)=>{
 
 //afficher par identifiant
 document.getElementById('showRegisterBtn').addEventListener("click", (e)=>{  
-    //e.preventDefault();
+    // e.preventDefault();
     //Verification 
     showBooking();
     if ($('#formIdentitySelect').valid()){ 
