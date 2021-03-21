@@ -25,7 +25,7 @@ Créer une application sécurisée qui permet de gérer l’attribution des post
 - bootstrap 5
 - php
 - apache
-- phpmyadmin
+
 
 ## liens :
 
