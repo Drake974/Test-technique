@@ -5,7 +5,7 @@
 
 <div class="d-flex justify-content-around mb-4">
 <div>
-<form action="#show_user_register" method="POST" class="bg-light p-2 rounded" id="formUserRegister">
+<form action="" method="POST" class="bg-light p-2 rounded" id="formUserRegister">
   <div class="mb-4 mt-4">
     <div class="form-floating mb-3">
       <input type="number" class="form-control form-date" id="floatingIdentity" placeholder="0000" required name="user_show">
@@ -115,7 +115,7 @@
     
 </form>
 <div>
-<form action="#showRegisterBtn" method="POST" class="ms-5 bg-light p-2 rounded" id="formIdentitySelect">
+<form action="" method="POST" class="ms-5 bg-light p-2 rounded" id="formIdentitySelect">
   <div class="mb-4 mt-4">
     <div class="form-floating mb-3">
       <input type="number" class="form-control form-date" id="floatingIdentityUser" placeholder="0000" required name="select_identity_user">
