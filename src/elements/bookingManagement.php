@@ -165,7 +165,7 @@
         </thead>
         <tbody>
             <?php ?>
-            <?php if(isset($_POST["booking_show_register"]) or isset($_POST["select_identity"])):?>
+            <?php if(isset($_POST["booking_show_register"]) or isset($_POST["select_identity_user"])):?>
             <?php foreach($users as $user):?>
             <tr>
                 <td scope="row" class="text-center">
