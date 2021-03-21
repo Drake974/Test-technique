@@ -88,7 +88,7 @@
 <script>
     //recherche par date
     document.getElementById('home_date').addEventListener("click", (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         homeDate();
         if ($('#homeDateChoose').valid()) {
             document.getElementById('homeDateChoose').submit();
@@ -96,7 +96,7 @@
     });
     //recherche par identifiant
     document.getElementById('show_register').addEventListener("click", (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         homeIdentity();
         if ($('#homeIdentity').valid()) {
             document.getElementById('homeIdentity').submit();

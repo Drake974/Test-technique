@@ -25,7 +25,7 @@ require_once(dirname(__DIR__).'/elements/bookingManagement.php');
 <script>
 //afficher
 document.getElementById('show_user_register').addEventListener("click", (e)=>{  
-    e.preventDefault();
+   // e.preventDefault();
     //Verification 
     showUsers();
     if ($('#formUserRegister').valid()){ 
@@ -35,7 +35,7 @@ document.getElementById('show_user_register').addEventListener("click", (e)=>{
 
 //reserver
 document.getElementById('btnBookingChoose').addEventListener("click", (e)=>{  
-    e.preventDefault();
+   // e.preventDefault();
     //Verification
     userBooking();
     if ($('#formDateRegister').valid()){ 
@@ -45,7 +45,7 @@ document.getElementById('btnBookingChoose').addEventListener("click", (e)=>{
 
 //afficher par date
 document.getElementById('showBooking').addEventListener("click", (e)=>{  
-    e.preventDefault();
+    //e.preventDefault();
     //Verification 
     showDateBooking();
     if ($('#formDateBooking').valid()){ 
@@ -55,7 +55,7 @@ document.getElementById('showBooking').addEventListener("click", (e)=>{
 
 //afficher par identifiant
 document.getElementById('showRegisterBtn').addEventListener("click", (e)=>{  
-    e.preventDefault();
+    //e.preventDefault();
     //Verification 
     showBooking();
     if ($('#formIdentitySelect').valid()){ 

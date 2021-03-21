@@ -1,6 +1,6 @@
-<?php if(isset($_POST["booking_show_register"])):?>
+<?php if(isset($_POST["booking_show_register"]) or isset($_POST['select_identity_user'])):?>
 <?php foreach($users as $user):?>
-<div class="modal fade" id="<?= " deleteBookingrModal_". htmlspecialchars($user->id_creneaux);?>" tabindex="-1"
+<div class="modal fade" id="<?= "deleteBookingrModal_". htmlspecialchars($user->id_creneaux);?>" tabindex="-1"
     aria-labelledby="deleteBooking" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
