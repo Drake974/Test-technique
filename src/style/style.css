@@ -38,7 +38,7 @@ h2{
     width: 220px;
 }
 .bg-header{
-    background: url(../images/ordinateur.jpg);
+    background: url(../images/ordinateur.jpg), no-repeat;
     height: 60vh;
 }
 .bg-title{opacity: 0.7;

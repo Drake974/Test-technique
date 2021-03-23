@@ -1,6 +1,6 @@
 <!-- Modal -->
 <?php foreach($computers as $computer):?>
-<div class="modal fade" id="<?= " editComputerModal_" . htmlspecialchars($computer->id_postes); ?>" tabindex="-1"
+<div class="modal fade" id="<?= "editComputerModal_" . htmlspecialchars($computer->id_postes); ?>" tabindex="-1"
     aria-labelledby="editComputerModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

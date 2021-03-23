@@ -26,7 +26,7 @@
                     <td class="text-center">
 
                         <button type="button" name="edit_user_id" class="btn btn-success" data-bs-toggle="modal"
-                            data-bs-target="#<?= " editUserModal_" . htmlspecialchars($utilisateur->id_utilisateurs);
+                            data-bs-target="#<?= "editUserModal_" . htmlspecialchars($utilisateur->id_utilisateurs);
                             ?>">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-pencil-fill" viewBox="0 0 16 16">
@@ -35,8 +35,7 @@
                             </svg>
                         </button>
 
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#<?= "
-                            deleteUserModal_" . htmlspecialchars($utilisateur->id_utilisateurs); ?>"><svg
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#<?= "deleteUserModal_" . htmlspecialchars($utilisateur->id_utilisateurs); ?>"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-trash-fill" viewBox="0 0 16 16">
                                 <path

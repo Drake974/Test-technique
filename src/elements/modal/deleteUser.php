@@ -1,6 +1,6 @@
 <!-- Modal -->
 <?php foreach($utilisateurs as $utilisateur):?>
-<div class="modal fade" id="<?= " deleteUserModal_" . htmlspecialchars($utilisateur->id_utilisateurs); ?>" tabindex="-1"
+<div class="modal fade" id="<?= "deleteUserModal_" . htmlspecialchars($utilisateur->id_utilisateurs); ?>" tabindex="-1"
     aria-labelledby="deleteUserModal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
