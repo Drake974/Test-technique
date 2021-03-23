@@ -184,8 +184,8 @@ const addComputer = () => {
             register_number_computer:{
                 required: true,
                 digits: true,
-                min: 1000,
-                max: 9999
+                min: 1,
+                max: 99
             }
         }
         
