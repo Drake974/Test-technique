@@ -213,8 +213,8 @@ const editComputer = () => {
             edit_computer_number:{
                 required: true,
                 digits: true,
-                min: 1000,
-                max: 9999
+                min: 1,
+                max: 99
             }
         }
         
